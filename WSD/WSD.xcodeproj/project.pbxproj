@@ -40,6 +40,8 @@
 		129B94D21E1D1B910097A9A8 /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D11E1D1B910097A9A8 /* BaseManager.m */; };
 		129B94D51E1D1CBD0097A9A8 /* ViewModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D41E1D1CBD0097A9A8 /* ViewModelManager.m */; };
 		129B94D81E1D1D360097A9A8 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D71E1D1D360097A9A8 /* BaseObject.m */; };
+		12BCF1D21E1E2A2900BBED51 /* WSDHomeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */; };
+		12BCF1D51E1E2DEE00BBED51 /* WSDHomeBtnListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */; };
 		12E94AF01E1E180F00927F63 /* BaseProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AEF1E1E180F00927F63 /* BaseProcessor.m */; };
 		12E94AF31E1E181500927F63 /* HomeProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AF21E1E181500927F63 /* HomeProcessor.m */; };
 		12F8315F1E1C87C700B0723D /* WSDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F8315E1E1C87C700B0723D /* WSDHomeViewController.m */; };
@@ -140,6 +142,10 @@
 		129B94D41E1D1CBD0097A9A8 /* ViewModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelManager.m; sourceTree = "<group>"; };
 		129B94D61E1D1D360097A9A8 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		129B94D71E1D1D360097A9A8 /* BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
+		12BCF1D01E1E2A2900BBED51 /* WSDHomeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeButton.h; sourceTree = "<group>"; };
+		12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeButton.m; sourceTree = "<group>"; };
+		12BCF1D31E1E2DEE00BBED51 /* WSDHomeBtnListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeBtnListView.h; sourceTree = "<group>"; };
+		12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeBtnListView.m; sourceTree = "<group>"; };
 		12E94AEE1E1E180F00927F63 /* BaseProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseProcessor.h; sourceTree = "<group>"; };
 		12E94AEF1E1E180F00927F63 /* BaseProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProcessor.m; sourceTree = "<group>"; };
 		12E94AF11E1E181500927F63 /* HomeProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProcessor.h; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 		1226618F1E1BBAA00009F045 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12BCF1CF1E1E2A2900BBED51 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -441,6 +448,17 @@
 			children = (
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		12BCF1CF1E1E2A2900BBED51 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				12BCF1D01E1E2A2900BBED51 /* WSDHomeButton.h */,
+				12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */,
+				12BCF1D31E1E2DEE00BBED51 /* WSDHomeBtnListView.h */,
+				12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		12F831721E1CA22200B0723D /* Model */ = {
@@ -809,6 +827,7 @@
 				122661CC1E1BBBDE0009F045 /* NSArray+Properties.m in Sources */,
 				129B94B81E1D1B020097A9A8 /* HomeInfoModel.m in Sources */,
 				122661C01E1BBBD50009F045 /* NSDictionary+Log.m in Sources */,
+				12BCF1D51E1E2DEE00BBED51 /* WSDHomeBtnListView.m in Sources */,
 				12F831711E1C977F00B0723D /* STL_BaseViewController.m in Sources */,
 				122661A01E1BBB490009F045 /* NSDate+JKExtension.m in Sources */,
 				12F831681E1C87ED00B0723D /* WSDMeViewController.m in Sources */,
@@ -819,6 +838,7 @@
 				12F831651E1C87DF00B0723D /* WSDStudyViewController.m in Sources */,
 				129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */,
 				129B94D81E1D1D360097A9A8 /* BaseObject.m in Sources */,
+				12BCF1D21E1E2A2900BBED51 /* WSDHomeButton.m in Sources */,
 				122661C11E1BBBD50009F045 /* NSString+Hashing.m in Sources */,
 				129B94B41E1D1AA90097A9A8 /* ViewModelFactory.m in Sources */,
 				122661C51E1BBBD50009F045 /* UIImage+Image.m in Sources */,

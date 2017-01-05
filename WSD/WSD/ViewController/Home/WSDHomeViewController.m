@@ -6,6 +6,10 @@
 //
 
 #import "WSDHomeViewController.h"
+#import "WSDHomeBtnListView.h"
+
+#define TopScrollViewH 170
+#define BtnOrderViewH  162
 
 @interface WSDHomeViewController ()
 <
@@ -17,6 +21,10 @@ SDCycleScrollViewDelegate
 @property (nonatomic, strong) UITableView *tableView;
 /** 顶部轮播图*/
 @property (nonatomic, strong) SDCycleScrollView *topScrollView;
+/** 按钮菜单视图*/
+@property (nonatomic, strong) WSDHomeBtnListView *btnOrderView;
+/** 头部视图*/
+@property (nonatomic, strong) UIView *HeaderView;
 
 @end
 
@@ -69,14 +77,6 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
     return 20;
 }
-/** 组头部视图*/
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor orangeColor];
-    return view;
-}
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -103,7 +103,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kWSDHomeTableViewCell];
-        _tableView.tableHeaderView = self.topScrollView;
+        _tableView.tableHeaderView = self.HeaderView;
         weak(self);
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             
@@ -116,12 +116,28 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 - (SDCycleScrollView *)topScrollView{
     if (_topScrollView == nil) {
-        _topScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0 , 0, SCREEN_WIDTH , 145)delegate:self placeholderImage:Placeholder_big];
+        _topScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0 , 0, SCREEN_WIDTH , TopScrollViewH)delegate:self placeholderImage:Placeholder_big];
         _topScrollView.backgroundColor = BACKGROUNDCOLOR;
         _topScrollView.placeholderImage = Placeholder_big;
         _topScrollView.autoScroll = YES;
     }
     return _topScrollView;
+}
+-(UIView *)btnOrderView{
+    if (_btnOrderView == nil) {
+        _btnOrderView = [[WSDHomeBtnListView alloc] initWithFrame:CGRectMake(0, TopScrollViewH, SCREEN_WIDTH, BtnOrderViewH)];
+        _btnOrderView.backgroundColor = [UIColor orangeColor];
+    }
+    return _btnOrderView;
+}
+
+-(UIView *)HeaderView{
+    if (_HeaderView == nil) {
+        _HeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TopScrollViewH + BtnOrderViewH)];
+        [_HeaderView addSubview:self.topScrollView];
+        [_HeaderView addSubview:self.btnOrderView];
+    }
+    return _HeaderView;
 }
 
 
