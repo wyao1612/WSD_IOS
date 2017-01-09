@@ -19,6 +19,8 @@ UITableViewDelegate,
 UITableViewDataSource,
 SDCycleScrollViewDelegate
 >
+/** 搜索框*/
+@property (nonatomic, strong) UIView *topNavView;
 /** 推荐课程视图*/
 @property (nonatomic, strong) UITableView *tableView;
 /** 顶部轮播图*/
@@ -38,19 +40,21 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     [self setupUI];
 }
 - (void)setupUI{
     
     self.view.backgroundColor = BACKGROUNDCOLOR;
-    UILabel *titleLb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 100, 17)];
-    titleLb.font = FONT(17);
-    titleLb.textAlignment = NSTextAlignmentCenter;
-    titleLb.textColor = BLACKTEXTCOLOR;
-    titleLb.text = @"维思得英语";
-    [self.navigationItem setTitleView:titleLb];
+    
+    [self.view addSubview:self.topNavView];
     [self.view addSubview:self.tableView];
     [self requestData];
+}
+
+#pragma mark - titleView搜索框点击
+-(void)titleViewTap:(UITapGestureRecognizer *)sender{
+    [SVProgressHUD showSuccessWithStatus:@"点击搜索"];
 }
 
 #pragma mark - 请求数据
@@ -102,7 +106,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 #pragma mark - 懒加载控件
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NaviBar_HEIGHT,SCREEN_WIDTH ,SCREEN_HEIGHT) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -154,6 +158,37 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     return _HeaderView;
 }
 
+-(UIView *)topNavView{
+    if (!_topNavView) {
+        _topNavView= [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,64)];
+        _topNavView.backgroundColor = [UIColor colorWithHex:0x2384ff];
+        
+        
+        UIButton *iconBtn = [[UIButton alloc] init];
+        iconBtn.frame = CGRectMake(15, 26, 35, 35);
+        [_topNavView addSubview:iconBtn];
+        iconBtn.sd_cornerRadius = @(35);
+        
+        
+        UISearchBar *searchBar = [[UISearchBar alloc]init];
+        searchBar.frame = CGRectMake(CGRectGetMaxX(iconBtn.frame),26,SCREEN_WIDTH-70,35);
+        searchBar.layer.cornerRadius = 18;
+        searchBar.layer.masksToBounds =YES;
+        //边框线粗细
+        [searchBar.layer setBorderWidth:8];
+        //设置边框为白色是为了盖住UISearchBar上的灰色
+        [searchBar.layer setBorderColor:[UIColor whiteColor].CGColor];
+        searchBar.placeholder=@"搜索";
+        searchBar.userInteractionEnabled = NO;
+        [_topNavView addSubview:searchBar];
+        UITapGestureRecognizer *titleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewTap:)];
+        [_topNavView addGestureRecognizer:titleViewTap];
+        
+        
+    }
+    
+    return _topNavView;
+}
 
 
 

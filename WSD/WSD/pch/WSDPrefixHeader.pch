@@ -26,6 +26,19 @@
 /** view头文件引入*/
 
 /** 类别*/
+#import "NSString+Hashing.h"
+#import "UIScrollView+UITouch.h"
+#import "UIBarButtonItem+YB_Extension.h"
+//#import "STL_CommonIdea.h"  //公共方法
+//#import "YB_FocusButton.h"  //关注Button
+#import "UIColor+Addition.h"
+#import "UILabel+Category.h"
+#import "UIButton+Addtion.h"//带颜色边框的button
+#import "WYAlertView.h" //自定义的提示框
+#import "UIScrollView+EmptyDataSet.h"   //空白页
+//#import "YB_SliderBtnView.h"//底部滚动条button
+//#import "BMChineseSort.h"   //拼音排序
+//#import "YB_Tools.h"
 
 
 /** 第三方头文件导入*/
