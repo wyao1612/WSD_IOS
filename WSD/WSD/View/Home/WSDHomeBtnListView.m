@@ -42,7 +42,7 @@
     
     //标题数组
     NSArray *titlesArr = [NSArray arrayWithObjects:@"学习进度",@"在线报名",@"成绩查询",@"在线测试",@"双优课堂",@"站内活动",nil];
-    NSArray *imagesArr = [NSArray arrayWithObjects:@"placeholder60",@"placeholder60",@"placeholder60",@"placeholder60",@"placeholder60",@"placeholder60",nil];
+    NSArray *imagesArr = [NSArray arrayWithObjects:@"classify10",@"classify3",@"classify4",@"classify5",@"classify6",@"classify7",nil];
     
     for (NSInteger i = 0; i < Count ; i++) {
         

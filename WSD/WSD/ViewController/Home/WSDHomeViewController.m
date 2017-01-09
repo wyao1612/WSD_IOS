@@ -7,9 +7,11 @@
 
 #import "WSDHomeViewController.h"
 #import "WSDHomeBtnListView.h"
+#import "WSDSectionView.h"
 
 #define TopScrollViewH 170
 #define BtnOrderViewH  162
+#define SectionViewH    48
 
 @interface WSDHomeViewController ()
 <
@@ -23,6 +25,8 @@ SDCycleScrollViewDelegate
 @property (nonatomic, strong) SDCycleScrollView *topScrollView;
 /** 按钮菜单视图*/
 @property (nonatomic, strong) WSDHomeBtnListView *btnOrderView;
+/** 头部推荐课程视图*/
+@property (nonatomic, strong) WSDSectionView *sectionView;
 /** 头部视图*/
 @property (nonatomic, strong) UIView *HeaderView;
 
@@ -131,15 +135,24 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     return _btnOrderView;
 }
 
+
+-(WSDSectionView *)sectionView{
+    if (!_sectionView) {
+        _sectionView = [[WSDSectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.btnOrderView.frame), SCREEN_WIDTH, SectionViewH)];
+        _sectionView.backgroundColor = [UIColor orangeColor];
+    }
+    return _sectionView;
+}
+
 -(UIView *)HeaderView{
     if (_HeaderView == nil) {
-        _HeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TopScrollViewH + BtnOrderViewH)];
+        _HeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TopScrollViewH + BtnOrderViewH + SectionViewH)];
         [_HeaderView addSubview:self.topScrollView];
         [_HeaderView addSubview:self.btnOrderView];
+        [_HeaderView addSubview:self.sectionView];
     }
     return _HeaderView;
 }
-
 
 
 

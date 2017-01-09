@@ -34,10 +34,10 @@
  */
 - (void)setupChildVcs
 {
-    [self setupChildVc:[[WSDHomeViewController alloc] init] title:@"首页" image:@"classify24" selectedImage:@"classify20"];
-    [self setupChildVc:[[WSDNewsViewController alloc] init] title:@"消息" image:@"classify25" selectedImage:@"classify21"];
-    [self setupChildVc:[[WSDStudyViewController alloc] init] title:@"学习" image:@"classify26" selectedImage:@"classify22"];
-    [self setupChildVc:[[WSDMeViewController alloc] init] title:@"我的" image:@"classify27" selectedImage:@"classify23"];
+    [self setupChildVc:[[WSDHomeViewController alloc] init] title:@"首页" image:@"bottom-home" selectedImage:@"bottom-home-select"];
+    [self setupChildVc:[[WSDNewsViewController alloc] init] title:@"消息" image:@"bottom-msg" selectedImage:@"bottom-msg-select"];
+    [self setupChildVc:[[WSDStudyViewController alloc] init] title:@"学习" image:@"bottom-study" selectedImage:@"bottom-study-select"];
+    [self setupChildVc:[[WSDMeViewController alloc] init] title:@"我的" image:@"bottom-user" selectedImage:@"bottom-user-select"];
     
 }
 
