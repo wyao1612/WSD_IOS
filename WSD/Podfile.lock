@@ -49,8 +49,8 @@ DEPENDENCIES:
   - JPush (~> 2.2.0.1)
   - JSPatch (~> 1.1)
   - Masonry (~> 1.0.2)
-  - MJExtension (~> 3.0.11)
-  - MJRefresh (~> 3.1.10)
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
   - SDAutoLayout (~> 2.1.4)
   - SDCycleScrollView (~> 1.65)
@@ -78,6 +78,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengUShare: 0a80f54ee06f71f3de7c57764c36339e8bf9b7e7
 
-PODFILE CHECKSUM: 5d284f18b1dd4ccb88ef363b25c213cd34259d47
+PODFILE CHECKSUM: 09485f39321d12933879b1dee80223c63cc6b070
 
 COCOAPODS: 1.2.0.beta.1
