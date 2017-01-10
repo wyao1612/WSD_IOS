@@ -113,7 +113,7 @@
 #define SHENTEXTCOLOR RGBColor(102, 102, 102)//深色/666666
 #define LIGHTTEXTCOLOR RGBColor(153, 153, 153)//灰色///999999
 #define GRAYCOLOR RGBColor(230, 230, 230)//---浅色//e6e6e6、/切割线色
-#define GLOBALCOLOR RGBColor(27,158,106)//绿色///
+#define GLOBALCOLOR [UIColor colorWithHex:0x2384ff]//蓝色 整体庚哥
 #define OrangeCOLOR RGBColor(252,84,0)//橘色、价格数据颜色
 
 /** 
