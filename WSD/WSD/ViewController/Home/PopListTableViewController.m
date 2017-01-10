@@ -10,7 +10,6 @@
 #import "AccountTableViewCell.h"
 #import "UserModel.h"
 
-#define inputW 230 // 输入框宽度
 #define inputH 35  // 输入框高
 
 
@@ -22,24 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // 背景
     self.view.backgroundColor = [UIColor whiteColor];
-    // 清除多余的分割线
     [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
-    //  边界
     self.tableView.layer.borderWidth = 0.5;
-    // 默认关闭下拉列表
+    self.tableView.separatorColor = GRAYCOLOR;;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     _isOpen = NO;
 }
 
 
-// 分区个数
+#pragma mark - 数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-// 每个分区cell个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // 展开与隐藏账号列表
     if(_isOpen)
@@ -48,38 +43,29 @@
         return 0;
 }
 
-// cell
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *specialId = @"id";
     AccountTableViewCell *cell = [[AccountTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:specialId];
     // 添加数据源
     UserModel  *acc = _accountSource[indexPath.row];
-    cell.avatar.image = [UIImage imageNamed:acc.avatar];// 头像
-    cell.account.text = acc.account;// 账号
-    [cell setBackgroundColor:[UIColor whiteColor]];
-    //分割线清偏移
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
-        [cell setPreservesSuperviewLayoutMargins:NO];
-        
-    }
+    cell.accountModel = acc;
     return cell;
 }
 
 // cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return inputH;
+    return 45;
 }
 
 // cell选中事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 通知代理
-    [_delegate selectedCell:indexPath.row];
+    if (self.delegate !=nil) {
+        if ([self.delegate respondsToSelector:@selector(PopListTableViewSelectedCell:)]) {
+            [self.delegate PopListTableViewSelectedCell:indexPath.row];
+        }
+    }
 }
 
 // 打开cell滑动编辑
@@ -97,8 +83,13 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_accountSource removeObjectAtIndex:indexPath.row];
         [self.tableView reloadData];
-        // 通知代理更新下拉菜单高度
-        [_delegate updateListH];
+        
+        // 通知代理
+        if (self.delegate !=nil) {
+            if ([self.delegate respondsToSelector:@selector(PopListTableViewUpdateListHeight)]) {
+                [self.delegate PopListTableViewUpdateListHeight];
+            }
+        }
     }
 }
 

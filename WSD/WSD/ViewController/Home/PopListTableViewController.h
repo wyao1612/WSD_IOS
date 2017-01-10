@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol AccountDelegate <NSObject>
+@protocol PopListTableViewAccountDelegate <NSObject>
 
+@optional
 /**
  * 选中cell的代理事件
  */
-- (void) selectedCell:(NSInteger)index;
+- (void) PopListTableViewSelectedCell:(NSInteger)index;
 
 /**
  *  更新下拉菜单的高度
  */
-- (void) updateListH;
+- (void) PopListTableViewUpdateListHeight;
 
 @end
 
@@ -36,6 +37,6 @@
 /**
  * 定义代理
  */
-@property (nonatomic, weak) id<AccountDelegate>delegate;
+@property (nonatomic, weak) id<PopListTableViewAccountDelegate>delegate;
 
 @end

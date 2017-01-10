@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UILabel *nameLabel;
 /** ID*/
 @property (nonatomic, strong) UILabel *IdLabel;
+/** 选中视图*/
+@property (nonatomic, strong) UIImageView *selectView;
 @end
 
 
@@ -34,10 +36,12 @@
 }
 
 -(void)setupUI{
+    
     [self setBackgroundColor:[UIColor whiteColor]];
     [self.contentView addSubview:self.avatar];
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.IdLabel];
+    [self.contentView addSubview:self.selectView];
     
     self.avatar.sd_layout
     .topSpaceToView(self.contentView,8)
@@ -58,6 +62,12 @@
     .autoHeightRatio(0);
     [self.IdLabel setMaxNumberOfLinesToShow:1];
     [self.IdLabel setSingleLineAutoResizeWithMaxWidth:100];
+    
+    self.selectView.sd_layout
+    .centerYEqualToView(self.contentView)
+    .rightSpaceToView(self.contentView,10)
+    .widthIs(16)
+    .heightIs(12);
     
 }
 
@@ -93,6 +103,14 @@
 
     }
     return _IdLabel;
+}
+-(UIImageView *)selectView{
+    if (!_selectView) {
+        _selectView = [[UIImageView alloc] init];
+        _selectView.image = [UIImage imageNamed:@"make"];
+        _selectView.hidden = YES;
+    }
+    return _selectView;
 }
 
 

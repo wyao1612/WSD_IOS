@@ -33,16 +33,16 @@
         if ([responObject[@"status"] isEqualToNumber:@1]) {
             //
             NSDictionary *data = responObject[@"data"];
-            [[UserModel sharedUserModel] mj_setKeyValues:data];
-            [[UserModel sharedUserModel] setIsLogin:YES];
+//            [[UserModel sharedUserModel] mj_setKeyValues:data];
+//            [[UserModel sharedUserModel] setIsLogin:YES];
             [GOLFUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
             responSuccess(responObject[@"resParam"]);
         }else{
-            [[UserModel sharedUserModel] setIsLogin:NO];
+//            [[UserModel sharedUserModel] setIsLogin:NO];
             responFailure([responObject[@"status"] integerValue], responObject[@"showMessage"]);
         }
     } failure:^(NSError *error) {
-        [[UserModel sharedUserModel] setIsLogin:NO];
+//        [[UserModel sharedUserModel] setIsLogin:NO];
         responFailure(0, [weakself analyticalHttpErrorDescription:error]);
     }];
 }
@@ -115,8 +115,8 @@
                                     success:^(id responObject) {
                                         if ([responObject[@"status"] isEqualToNumber:@1]) {
                                             NSDictionary *data = responObject[@"data"];
-                                            [[UserModel sharedUserModel] mj_setKeyValues:data];
-                                            [[UserModel sharedUserModel] setIsLogin:YES];
+//                                            [[UserModel sharedUserModel] mj_setKeyValues:data];
+//                                            [[UserModel sharedUserModel] setIsLogin:YES];
                                             [GOLFUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
                                             responSuccess(responObject[@"resParam"]);
                                         }else{

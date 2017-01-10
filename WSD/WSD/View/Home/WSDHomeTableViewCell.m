@@ -18,8 +18,9 @@
 /** 课程图标*/
 @property (nonatomic, strong) UIImageView *classIcon;
 /** 课程数量*/
-@property (nonatomic, strong) UILabel *clasaNumLabel;
-
+@property (nonatomic, strong) UILabel *classNumLabel;
+/** 课程价格*/
+@property (nonatomic, strong) UILabel *priceNumLabel;
 
 @end
 
@@ -41,7 +42,8 @@
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.DateLable];
     [self.contentView addSubview:self.classIcon];
-    [self.contentView addSubview:self.clasaNumLabel];
+    [self.contentView addSubview:self.classNumLabel];
+    [self.contentView addSubview:self.priceNumLabel];
     
     
     self.icon.sd_layout
@@ -70,12 +72,20 @@
     .widthIs(9)
     .heightIs(9);
     
-    self.clasaNumLabel.sd_layout
+    self.classNumLabel.sd_layout
     .centerYEqualToView(self.classIcon)
     .leftSpaceToView(self.classIcon,8)
     .autoHeightRatio(0);
-    [self.clasaNumLabel setMaxNumberOfLinesToShow:1];
-    [self.clasaNumLabel setSingleLineAutoResizeWithMaxWidth:50];
+    [self.classNumLabel setMaxNumberOfLinesToShow:1];
+    [self.classNumLabel setSingleLineAutoResizeWithMaxWidth:50];
+    
+    self.priceNumLabel.sd_layout
+    .topSpaceToView(self.contentView,50)
+    .rightSpaceToView(self.contentView,12)
+    .autoHeightRatio(0);
+    [self.priceNumLabel setMaxNumberOfLinesToShow:1];
+    [self.priceNumLabel setSingleLineAutoResizeWithMaxWidth:100];
+
     
     [self setupAutoHeightWithBottomView:self.icon bottomMargin:12];
 }
@@ -118,14 +128,24 @@
     return _classIcon;
 }
 
-- (UILabel *)clasaNumLabel{
-    if (_clasaNumLabel == nil) {
-        _clasaNumLabel = [[UILabel alloc] init];
-        _clasaNumLabel.font = FONT(14);
-        _clasaNumLabel.textColor = LIGHTTEXTCOLOR;
-        _clasaNumLabel.text = @"10次课";
+- (UILabel *)classNumLabel{
+    if (_classNumLabel == nil) {
+        _classNumLabel = [[UILabel alloc] init];
+        _classNumLabel.font = FONT(14);
+        _classNumLabel.textColor = LIGHTTEXTCOLOR;
+        _classNumLabel.text = @"10次课";
     }
-    return _clasaNumLabel;
+    return _classNumLabel;
+}
+-(UILabel *)priceNumLabel{
+    if (!_priceNumLabel) {
+        _priceNumLabel = [[UILabel alloc] init];
+        _priceNumLabel.textColor = LIGHTTEXTCOLOR;
+        _priceNumLabel.text = @"¥1700";
+        _priceNumLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
+        _priceNumLabel.textColor = [UIColor redColor];
+    }
+    return _priceNumLabel;
 }
 
 @end

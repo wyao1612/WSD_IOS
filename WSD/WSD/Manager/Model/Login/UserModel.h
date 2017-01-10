@@ -11,6 +11,11 @@
 
 @interface UserModel : NSObject
 
+/** 用户头像*/
+@property (nonatomic, copy) NSString *avatar;
+
+
+
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *areaId;
 @property (nonatomic, copy) NSString *cellphone;

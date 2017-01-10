@@ -9,17 +9,22 @@
 #import "WSDHomeBtnListView.h"
 #import "WSDSeacherViewController.h"
 #import "WSDHomeTableViewCell.h"
+#import "PopListTableViewController.h"
+#import "UserModel.h"
 
 #define TopScrollViewH 170
 #define BtnOrderViewH  162
 #define SectionViewH    48
+
+#define inputW 230 // 输入框宽度
+#define inputH 35  // 输入框高度
 
 @interface WSDHomeViewController ()
 <
 UITableViewDelegate,
 UITableViewDataSource,
 SDCycleScrollViewDelegate,
-UISearchBarDelegate
+PopListTableViewAccountDelegate
 >
 /** 头部视图*/
 @property (nonatomic, strong) UIView *topNavView;
@@ -48,6 +53,37 @@ UISearchBarDelegate
 @property (nonatomic, strong) UIView *sectionView;
 
 
+/**
+ * 账号数据
+ */
+@property (nonatomic) NSMutableArray *dataSource;
+
+/**
+ * 当前账号选择框
+ */
+@property (nonatomic, copy) UIButton *curAccount;
+
+/**
+ *  当前选中账号
+ */
+@property (nonatomic, strong) UserModel *curAcc;
+
+/**
+ * 当前账号头像
+ */
+@property (nonatomic, copy) UIImageView *icon;
+
+/**
+ *  账号下拉列表
+ */
+@property (nonatomic, strong) PopListTableViewController *accountList;
+
+/**
+ *  下拉列表的frame
+ */
+@property (nonatomic) CGRect listFrame;
+
+
 @end
 
 static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
@@ -62,6 +98,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
+    [self setPopMenu];
 }
 - (void)setupUI{
     
@@ -69,7 +106,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     
     [self.view addSubview:self.topNavView];
     [self.view addSubview:self.tableView];
-    [self requestData];
+
 }
 
 #pragma mark - titleView搜索框点击
@@ -78,8 +115,65 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 }
 #pragma mark - 头像点击
 -(void)iconImageViewTap:(UITapGestureRecognizer *)sender{
-     [SVProgressHUD showSuccessWithStatus:@"更换头像"];
+   [self openAccountList];
 }
+
+/** 设置下拉菜单*/
+- (void)setPopMenu {
+    
+    // 从工程plist文件读取账号模型数据
+    _dataSource = [UserModel mj_objectArrayWithFilename:@"account.plist"];
+
+    // 设置账号弹出菜单(最后添加显示在顶层)
+    _accountList = [[PopListTableViewController alloc] init];
+    _accountList.delegate = self;
+    _accountList.accountSource = _dataSource;
+    // 初始化frame
+    [self PopListTableViewUpdateListHeight];
+    // 隐藏下拉菜单
+    _accountList.view.frame = CGRectZero;
+    [self addChildViewController:_accountList];
+    [self.view addSubview:_accountList.view];
+}
+
+/**
+ * 弹出关闭账号选择列表
+ */
+- (void)openAccountList {
+    _accountList.isOpen = !_accountList.isOpen;
+    if (_accountList.isOpen) {
+        _accountList.view.frame = _listFrame;
+    }
+    else {
+        _accountList.view.frame = CGRectZero;
+    }
+}
+
+#pragma mark - 下拉菜单的代理方法
+/** 监听代理选定cell获取选中账号*/
+- (void)PopListTableViewSelectedCell:(NSInteger)index {
+    // 更新当前选中账号
+    UserModel *acc = _dataSource[index];
+    [_icon setImage:[UIImage imageNamed:acc.avatar]];
+    [_curAccount setTitle:acc.ID forState:UIControlStateNormal];
+    // 关闭菜单
+    [self openAccountList];
+}
+/** 监听代理更新下拉菜单*/
+- (void)PopListTableViewUpdateListHeight {
+    CGFloat listH;
+    // 数据大于3个现实3个半的高度，否则显示完整高度
+    if (_dataSource.count > 3) {
+        listH = inputH * 3.5;
+    }else{
+        listH = inputH * _dataSource.count;
+    }
+    _listFrame = CGRectMake(0, 64, SCREEN_WIDTH, listH);
+    _accountList.view.frame = _listFrame;
+}
+
+
+
 -(void)searchImageViewTap:(UITapGestureRecognizer *)sender{
     WSDSeacherViewController *vc = [[WSDSeacherViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -89,10 +183,17 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 }
 
 
-#pragma mark - 请求数据
-- (void)requestData{
-  
+
+#pragma mark --下拉刷新数据
+- (void)LoadNewData {
+    
 }
+
+#pragma mark --上拉加载更多数据
+- (void)LoadMoreData {
+   
+}
+
 
 #pragma mark -  布局头部视图
 -(void)layoutTopNavSubviews{
@@ -180,6 +281,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 
 
+
 #pragma mark - 懒加载控件
 - (UITableView *)tableView{
     if (_tableView == nil) {
@@ -193,16 +295,19 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         [_tableView registerClass:[WSDHomeTableViewCell class] forCellReuseIdentifier:kWSDHomeTableViewCell];
         _tableView.tableHeaderView = self.HeaderView;
         
-        
-        
         weak(self);
-        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            [weakSelf requestData];
+        //设置下拉刷新
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf LoadNewData];
+            [_tableView.mj_header endRefreshing];
             
         }];
-        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            [weakSelf requestData];
-            [weakSelf.tableView.mj_header endRefreshing];
+        _tableView.mj_header.automaticallyChangeAlpha = YES;
+        
+        //设置上拉加载更多
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [weakSelf LoadMoreData];
+            [_tableView.mj_footer endRefreshing];
         }];
     
     }

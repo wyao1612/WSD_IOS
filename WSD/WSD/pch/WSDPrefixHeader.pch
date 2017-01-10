@@ -17,10 +17,13 @@
 #import "ViewModelFactory.h" //基础工厂
 #import "ViewModelManager.h" //基础业务类
 #import "WSDTypeDef.h"     //常用type
+#import "GolfMJExtensionConfig.h"
 /** 业务相关头文件*/
 
 
 /** model头文件引入*/
+//------------登录----------------
+#import "UserModel.h"   //用户数据模型
 
 
 /** view头文件引入*/
