@@ -161,7 +161,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         _coverView.backgroundColor = [UIColor colorWithHex:0x474747];
         [self.view addSubview:_coverView];
         UITapGestureRecognizer *overViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
-        [_coverView addGestureRecognizer:overViewTap];
+        [_searchImageView addGestureRecognizer:overViewTap];
     }
     return _coverView;
 }

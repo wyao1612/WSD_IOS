@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSDMeViewController : UIViewController
+@interface WSDMeViewController : STL_BaseViewController
 
 @end

@@ -56,5 +56,4 @@ static UserModel *model;
 }
 
 
-
 @end

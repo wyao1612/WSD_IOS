@@ -19,14 +19,19 @@
 #import "WSDTypeDef.h"     //常用type
 #import "GolfMJExtensionConfig.h"
 /** 业务相关头文件*/
-
+#import "STL_BaseViewController.h"
 
 /** model头文件引入*/
 //------------登录----------------
 #import "UserModel.h"   //用户数据模型
+#import "UserProcessor.h"
 
 
 /** view头文件引入*/
+#import "SettingViewController.h"   //设置页
+#import "UserInfoViewController.h" //个人资料
+
+
 
 /** 类别*/
 #import "NSString+Hashing.h"
@@ -45,7 +50,7 @@
 
 //#import "YB_SliderBtnView.h"//底部滚动条button
 //#import "BMChineseSort.h"   //拼音排序
-//#import "YB_Tools.h"
+#import "YB_Tools.h"
 
 
 /** 第三方头文件导入*/
