@@ -11,6 +11,4 @@
 @interface AccountTableViewCell : UITableViewCell
 
 @property(strong,nonatomic) UserModel *accountModel;
-/** 是否显示*/
-@property (nonatomic, strong) NSString* isSelect;
 @end

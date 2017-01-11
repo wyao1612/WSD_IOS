@@ -10,8 +10,7 @@
 
 #define inputW 230 // 输入框宽度
 #define inputH 35  // 输入框高度
-// 选中颜色加深
-#define SelectColor [UIColor colorWithRed:238.0f/255.0f green:238.0f/255.0f blue:238.0f/255.0f alpha:1.0]
+
 
 @interface AccountTableViewCell ()
 /** 头像 */
@@ -22,8 +21,8 @@
 @property (nonatomic, strong) UILabel *IdLabel;
 /** 选中视图*/
 @property (nonatomic, strong) UIImageView *selectView;
-
 @end
+
 
 
 @implementation AccountTableViewCell
@@ -73,24 +72,14 @@
     
 }
 
+
+
 -(void)setAccountModel:(UserModel *)accountModel{
     _accountModel = accountModel;
     self.avatar.image = [UIImage imageNamed:accountModel.avatar];// 头像
     self.nameLabel.text = accountModel.name;// 名字
     self.IdLabel.text = accountModel.ID;
-    
-    NSLog(@"------->%@",self.nameLabel.text);
 }
-
--(void)setIsSelect:(NSString *)isSelect{
-    _isSelect = isSelect;
-    if ([isSelect isEqualToString:@"1"]) {
-        self.selectView.hidden = NO;
-    }else{
-        self.selectView.hidden = YES;
-    }
-}
-
 
 -(UIImageView *)avatar{
     if (!_avatar) {
@@ -122,7 +111,6 @@
     if (!_selectView) {
         _selectView = [[UIImageView alloc] init];
         _selectView.image = [UIImage imageNamed:@"make"];
-        _selectView.hidden = YES;
     }
     return _selectView;
 }
@@ -131,7 +119,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    self.selectView.hidden = !selected;
     // Configure the view for the selected state
 }
 

@@ -26,6 +26,14 @@
 		122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661BA1E1BBBD50009F045 /* UIScrollView+UITouch.m */; };
 		122661CC1E1BBBDE0009F045 /* NSArray+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661CB1E1BBBDE0009F045 /* NSArray+Properties.m */; };
 		122661E41E1BD0840009F045 /* WSDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661E31E1BD0840009F045 /* WSDTabBarController.m */; };
+		12934CBE1E25E2EB008932D8 /* account.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12934CB51E25E2EB008932D8 /* account.plist */; };
+		12934CBF1E25E2EB008932D8 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CB71E25E2EB008932D8 /* AccountTableViewCell.m */; };
+		12934CC01E25E2EB008932D8 /* WSDHomeBtnListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CB91E25E2EB008932D8 /* WSDHomeBtnListView.m */; };
+		12934CC11E25E2EB008932D8 /* WSDHomeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CBB1E25E2EB008932D8 /* WSDHomeButton.m */; };
+		12934CC21E25E2EB008932D8 /* WSDHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CBD1E25E2EB008932D8 /* WSDHomeTableViewCell.m */; };
+		12934CD91E25E3CE008932D8 /* PopListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CD41E25E3CE008932D8 /* PopListTableViewController.m */; };
+		12934CDA1E25E3CE008932D8 /* WSDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CD61E25E3CE008932D8 /* WSDHomeViewController.m */; };
+		12934CDB1E25E3CE008932D8 /* WSDSeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12934CD81E25E3CE008932D8 /* WSDSeacherViewController.m */; };
 		129B94B41E1D1AA90097A9A8 /* ViewModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94B31E1D1AA90097A9A8 /* ViewModelFactory.m */; };
 		129B94B81E1D1B020097A9A8 /* HomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94B71E1D1B020097A9A8 /* HomeInfoModel.m */; };
 		129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94BB1E1D1B100097A9A8 /* UserModel.m */; };
@@ -33,23 +41,15 @@
 		129B94D21E1D1B910097A9A8 /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D11E1D1B910097A9A8 /* BaseManager.m */; };
 		129B94D51E1D1CBD0097A9A8 /* ViewModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D41E1D1CBD0097A9A8 /* ViewModelManager.m */; };
 		129B94D81E1D1D360097A9A8 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94D71E1D1D360097A9A8 /* BaseObject.m */; };
-		12BCF1D21E1E2A2900BBED51 /* WSDHomeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */; };
-		12BCF1D51E1E2DEE00BBED51 /* WSDHomeBtnListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */; };
 		12DA46401E24702C00159CD6 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA463F1E24702C00159CD6 /* UIImage+Extension.m */; };
 		12DA46431E24704100159CD6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46421E24704100159CD6 /* UIView+Extension.m */; };
 		12DA46461E24705E00159CD6 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46451E24705E00159CD6 /* NSDate+Extension.m */; };
-		12DA46491E24834400159CD6 /* WSDSeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46481E24834400159CD6 /* WSDSeacherViewController.m */; };
 		12DA464C1E2492DB00159CD6 /* UIButton+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA464B1E2492DB00159CD6 /* UIButton+category.m */; };
-		12DA464F1E2498AD00159CD6 /* WSDHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA464E1E2498AD00159CD6 /* WSDHomeTableViewCell.m */; };
 		12DA46521E24C64900159CD6 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46511E24C64900159CD6 /* LoginManager.m */; };
 		12DA46551E24C67F00159CD6 /* LoginProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46541E24C67F00159CD6 /* LoginProcessor.m */; };
-		12DA46641E24D5A200159CD6 /* PopListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46631E24D5A200159CD6 /* PopListTableViewController.m */; };
 		12DA46671E24E2D500159CD6 /* GolfMJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46661E24E2D500159CD6 /* GolfMJExtensionConfig.m */; };
-		12DA466B1E24E30E00159CD6 /* account.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DA46681E24E30E00159CD6 /* account.plist */; };
-		12DA466C1E24E30E00159CD6 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA466A1E24E30E00159CD6 /* AccountTableViewCell.m */; };
 		12E94AF01E1E180F00927F63 /* BaseProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AEF1E1E180F00927F63 /* BaseProcessor.m */; };
 		12E94AF31E1E181500927F63 /* HomeProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AF21E1E181500927F63 /* HomeProcessor.m */; };
-		12F8315F1E1C87C700B0723D /* WSDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F8315E1E1C87C700B0723D /* WSDHomeViewController.m */; };
 		12F831621E1C87D400B0723D /* WSDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F831611E1C87D400B0723D /* WSDNewsViewController.m */; };
 		12F831651E1C87DF00B0723D /* WSDStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F831641E1C87DF00B0723D /* WSDStudyViewController.m */; };
 		12F831681E1C87ED00B0723D /* WSDMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F831671E1C87ED00B0723D /* WSDMeViewController.m */; };
@@ -119,6 +119,21 @@
 		122661D01E1BC0260009F045 /* WSDTypeDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDTypeDef.h; sourceTree = "<group>"; };
 		122661E21E1BD0840009F045 /* WSDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDTabBarController.h; sourceTree = "<group>"; };
 		122661E31E1BD0840009F045 /* WSDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDTabBarController.m; sourceTree = "<group>"; };
+		12934CB51E25E2EB008932D8 /* account.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = account.plist; sourceTree = "<group>"; };
+		12934CB61E25E2EB008932D8 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		12934CB71E25E2EB008932D8 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
+		12934CB81E25E2EB008932D8 /* WSDHomeBtnListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeBtnListView.h; sourceTree = "<group>"; };
+		12934CB91E25E2EB008932D8 /* WSDHomeBtnListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeBtnListView.m; sourceTree = "<group>"; };
+		12934CBA1E25E2EB008932D8 /* WSDHomeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeButton.h; sourceTree = "<group>"; };
+		12934CBB1E25E2EB008932D8 /* WSDHomeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeButton.m; sourceTree = "<group>"; };
+		12934CBC1E25E2EB008932D8 /* WSDHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeTableViewCell.h; sourceTree = "<group>"; };
+		12934CBD1E25E2EB008932D8 /* WSDHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeTableViewCell.m; sourceTree = "<group>"; };
+		12934CD31E25E3CD008932D8 /* PopListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopListTableViewController.h; sourceTree = "<group>"; };
+		12934CD41E25E3CE008932D8 /* PopListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopListTableViewController.m; sourceTree = "<group>"; };
+		12934CD51E25E3CE008932D8 /* WSDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeViewController.h; sourceTree = "<group>"; };
+		12934CD61E25E3CE008932D8 /* WSDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeViewController.m; sourceTree = "<group>"; };
+		12934CD71E25E3CE008932D8 /* WSDSeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDSeacherViewController.h; sourceTree = "<group>"; };
+		12934CD81E25E3CE008932D8 /* WSDSeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDSeacherViewController.m; sourceTree = "<group>"; };
 		129B94B21E1D1AA90097A9A8 /* ViewModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelFactory.h; sourceTree = "<group>"; };
 		129B94B31E1D1AA90097A9A8 /* ViewModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelFactory.m; sourceTree = "<group>"; };
 		129B94B61E1D1B020097A9A8 /* HomeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInfoModel.h; sourceTree = "<group>"; };
@@ -133,39 +148,24 @@
 		129B94D41E1D1CBD0097A9A8 /* ViewModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelManager.m; sourceTree = "<group>"; };
 		129B94D61E1D1D360097A9A8 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		129B94D71E1D1D360097A9A8 /* BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
-		12BCF1D01E1E2A2900BBED51 /* WSDHomeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeButton.h; sourceTree = "<group>"; };
-		12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeButton.m; sourceTree = "<group>"; };
-		12BCF1D31E1E2DEE00BBED51 /* WSDHomeBtnListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeBtnListView.h; sourceTree = "<group>"; };
-		12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeBtnListView.m; sourceTree = "<group>"; };
 		12DA463E1E24702C00159CD6 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		12DA463F1E24702C00159CD6 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		12DA46411E24704100159CD6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		12DA46421E24704100159CD6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		12DA46441E24705E00159CD6 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		12DA46451E24705E00159CD6 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
-		12DA46471E24834400159CD6 /* WSDSeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDSeacherViewController.h; sourceTree = "<group>"; };
-		12DA46481E24834400159CD6 /* WSDSeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDSeacherViewController.m; sourceTree = "<group>"; };
 		12DA464A1E2492DB00159CD6 /* UIButton+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+category.h"; sourceTree = "<group>"; };
 		12DA464B1E2492DB00159CD6 /* UIButton+category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+category.m"; sourceTree = "<group>"; };
-		12DA464D1E2498AD00159CD6 /* WSDHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeTableViewCell.h; sourceTree = "<group>"; };
-		12DA464E1E2498AD00159CD6 /* WSDHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeTableViewCell.m; sourceTree = "<group>"; };
 		12DA46501E24C64900159CD6 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		12DA46511E24C64900159CD6 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		12DA46531E24C67F00159CD6 /* LoginProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginProcessor.h; sourceTree = "<group>"; };
 		12DA46541E24C67F00159CD6 /* LoginProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginProcessor.m; sourceTree = "<group>"; };
-		12DA46621E24D5A200159CD6 /* PopListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopListTableViewController.h; sourceTree = "<group>"; };
-		12DA46631E24D5A200159CD6 /* PopListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopListTableViewController.m; sourceTree = "<group>"; };
 		12DA46651E24E2D500159CD6 /* GolfMJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolfMJExtensionConfig.h; sourceTree = "<group>"; };
 		12DA46661E24E2D500159CD6 /* GolfMJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolfMJExtensionConfig.m; sourceTree = "<group>"; };
-		12DA46681E24E30E00159CD6 /* account.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = account.plist; sourceTree = "<group>"; };
-		12DA46691E24E30E00159CD6 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
-		12DA466A1E24E30E00159CD6 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		12E94AEE1E1E180F00927F63 /* BaseProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseProcessor.h; sourceTree = "<group>"; };
 		12E94AEF1E1E180F00927F63 /* BaseProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProcessor.m; sourceTree = "<group>"; };
 		12E94AF11E1E181500927F63 /* HomeProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProcessor.h; sourceTree = "<group>"; };
 		12E94AF21E1E181500927F63 /* HomeProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProcessor.m; sourceTree = "<group>"; };
-		12F8315D1E1C87C700B0723D /* WSDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDHomeViewController.h; sourceTree = "<group>"; };
-		12F8315E1E1C87C700B0723D /* WSDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDHomeViewController.m; sourceTree = "<group>"; };
 		12F831601E1C87D400B0723D /* WSDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDNewsViewController.h; sourceTree = "<group>"; };
 		12F831611E1C87D400B0723D /* WSDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDNewsViewController.m; sourceTree = "<group>"; };
 		12F831631E1C87DF00B0723D /* WSDStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDStudyViewController.h; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 		1226618F1E1BBAA00009F045 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12BCF1CF1E1E2A2900BBED51 /* Home */,
+				12934CB41E25E2EB008932D8 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 		122661901E1BBAA00009F045 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				122661DE1E1BD0180009F045 /* Home */,
+				12934CD21E25E3CD008932D8 /* Home */,
 				122661E01E1BD0180009F045 /* News */,
 				122661E11E1BD0220009F045 /* Study */,
 				122661DF1E1BD0180009F045 /* Me */,
@@ -391,19 +391,6 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		122661DE1E1BD0180009F045 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				12F8315D1E1C87C700B0723D /* WSDHomeViewController.h */,
-				12F8315E1E1C87C700B0723D /* WSDHomeViewController.m */,
-				12DA46621E24D5A200159CD6 /* PopListTableViewController.h */,
-				12DA46631E24D5A200159CD6 /* PopListTableViewController.m */,
-				12DA46471E24834400159CD6 /* WSDSeacherViewController.h */,
-				12DA46481E24834400159CD6 /* WSDSeacherViewController.m */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		122661DF1E1BD0180009F045 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +418,35 @@
 			path = Study;
 			sourceTree = "<group>";
 		};
+		12934CB41E25E2EB008932D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				12934CB51E25E2EB008932D8 /* account.plist */,
+				12934CB61E25E2EB008932D8 /* AccountTableViewCell.h */,
+				12934CB71E25E2EB008932D8 /* AccountTableViewCell.m */,
+				12934CB81E25E2EB008932D8 /* WSDHomeBtnListView.h */,
+				12934CB91E25E2EB008932D8 /* WSDHomeBtnListView.m */,
+				12934CBA1E25E2EB008932D8 /* WSDHomeButton.h */,
+				12934CBB1E25E2EB008932D8 /* WSDHomeButton.m */,
+				12934CBC1E25E2EB008932D8 /* WSDHomeTableViewCell.h */,
+				12934CBD1E25E2EB008932D8 /* WSDHomeTableViewCell.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		12934CD21E25E3CD008932D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				12934CD31E25E3CD008932D8 /* PopListTableViewController.h */,
+				12934CD41E25E3CE008932D8 /* PopListTableViewController.m */,
+				12934CD51E25E3CE008932D8 /* WSDHomeViewController.h */,
+				12934CD61E25E3CE008932D8 /* WSDHomeViewController.m */,
+				12934CD71E25E3CE008932D8 /* WSDSeacherViewController.h */,
+				12934CD81E25E3CE008932D8 /* WSDSeacherViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		129B94B51E1D1B020097A9A8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,22 +470,6 @@
 			children = (
 			);
 			path = Me;
-			sourceTree = "<group>";
-		};
-		12BCF1CF1E1E2A2900BBED51 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				12BCF1D01E1E2A2900BBED51 /* WSDHomeButton.h */,
-				12BCF1D11E1E2A2900BBED51 /* WSDHomeButton.m */,
-				12BCF1D31E1E2DEE00BBED51 /* WSDHomeBtnListView.h */,
-				12BCF1D41E1E2DEE00BBED51 /* WSDHomeBtnListView.m */,
-				12DA464D1E2498AD00159CD6 /* WSDHomeTableViewCell.h */,
-				12DA464E1E2498AD00159CD6 /* WSDHomeTableViewCell.m */,
-				12DA46681E24E30E00159CD6 /* account.plist */,
-				12DA46691E24E30E00159CD6 /* AccountTableViewCell.h */,
-				12DA466A1E24E30E00159CD6 /* AccountTableViewCell.m */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		12F831721E1CA22200B0723D /* Model */ = {
@@ -671,7 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1226616A1E1BAD4B0009F045 /* LaunchScreen.storyboard in Resources */,
-				12DA466B1E24E30E00159CD6 /* account.plist in Resources */,
+				12934CBE1E25E2EB008932D8 /* account.plist in Resources */,
 				122661671E1BAD4B0009F045 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,37 +836,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				122661C31E1BBBD50009F045 /* UIButton+Addtion.m in Sources */,
+				12934CBF1E25E2EB008932D8 /* AccountTableViewCell.m in Sources */,
 				122661E41E1BD0840009F045 /* WSDTabBarController.m in Sources */,
 				122661C41E1BBBD50009F045 /* UIColor+Addition.m in Sources */,
+				12934CDA1E25E3CE008932D8 /* WSDHomeViewController.m in Sources */,
 				12E94AF01E1E180F00927F63 /* BaseProcessor.m in Sources */,
 				122661CC1E1BBBDE0009F045 /* NSArray+Properties.m in Sources */,
 				129B94B81E1D1B020097A9A8 /* HomeInfoModel.m in Sources */,
-				12DA46641E24D5A200159CD6 /* PopListTableViewController.m in Sources */,
 				12DA46521E24C64900159CD6 /* LoginManager.m in Sources */,
 				122661C01E1BBBD50009F045 /* NSDictionary+Log.m in Sources */,
-				12BCF1D51E1E2DEE00BBED51 /* WSDHomeBtnListView.m in Sources */,
 				12F831711E1C977F00B0723D /* STL_BaseViewController.m in Sources */,
+				12934CDB1E25E3CE008932D8 /* WSDSeacherViewController.m in Sources */,
 				12F831681E1C87ED00B0723D /* WSDMeViewController.m in Sources */,
 				122661BF1E1BBBD50009F045 /* NSDate+YB_Extension.m in Sources */,
 				129B94CF1E1D1B770097A9A8 /* HomeManager.m in Sources */,
 				12E94AF31E1E181500927F63 /* HomeProcessor.m in Sources */,
-				12DA464F1E2498AD00159CD6 /* WSDHomeTableViewCell.m in Sources */,
 				12DA46401E24702C00159CD6 /* UIImage+Extension.m in Sources */,
 				12F8316B1E1C87FE00B0723D /* WSDNavigationController.m in Sources */,
 				12F831651E1C87DF00B0723D /* WSDStudyViewController.m in Sources */,
+				12934CC01E25E2EB008932D8 /* WSDHomeBtnListView.m in Sources */,
+				12934CD91E25E3CE008932D8 /* PopListTableViewController.m in Sources */,
 				12DA46431E24704100159CD6 /* UIView+Extension.m in Sources */,
 				129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */,
 				12DA46551E24C67F00159CD6 /* LoginProcessor.m in Sources */,
-				12DA46491E24834400159CD6 /* WSDSeacherViewController.m in Sources */,
+				12934CC21E25E2EB008932D8 /* WSDHomeTableViewCell.m in Sources */,
 				129B94D81E1D1D360097A9A8 /* BaseObject.m in Sources */,
 				12DA464C1E2492DB00159CD6 /* UIButton+category.m in Sources */,
 				12DA46461E24705E00159CD6 /* NSDate+Extension.m in Sources */,
-				12BCF1D21E1E2A2900BBED51 /* WSDHomeButton.m in Sources */,
 				122661C11E1BBBD50009F045 /* NSString+Hashing.m in Sources */,
 				129B94B41E1D1AA90097A9A8 /* ViewModelFactory.m in Sources */,
 				122661C51E1BBBD50009F045 /* UIImage+Image.m in Sources */,
 				1226615F1E1BAD4B0009F045 /* AppDelegate.m in Sources */,
-				12F8315F1E1C87C700B0723D /* WSDHomeViewController.m in Sources */,
+				12934CC11E25E2EB008932D8 /* WSDHomeButton.m in Sources */,
 				122661A81E1BBB520009F045 /* UIScrollView+EmptyDataSet.m in Sources */,
 				12F8316E1E1C96F800B0723D /* BaseSearchTableViewController.m in Sources */,
 				129B94D21E1D1B910097A9A8 /* BaseManager.m in Sources */,
@@ -874,7 +875,6 @@
 				129B94D51E1D1CBD0097A9A8 /* ViewModelManager.m in Sources */,
 				122661C21E1BBBD50009F045 /* UIBarButtonItem+YB_Extension.m in Sources */,
 				122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */,
-				12DA466C1E24E30E00159CD6 /* AccountTableViewCell.m in Sources */,
 				122661C61E1BBBD50009F045 /* UILabel+Category.m in Sources */,
 				1226615C1E1BAD4B0009F045 /* main.m in Sources */,
 				12DA46671E24E2D500159CD6 /* GolfMJExtensionConfig.m in Sources */,
