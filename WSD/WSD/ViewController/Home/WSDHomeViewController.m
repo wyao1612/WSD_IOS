@@ -24,7 +24,8 @@
 UITableViewDelegate,
 UITableViewDataSource,
 SDCycleScrollViewDelegate,
-PopListTableViewAccountDelegate
+PopListTableViewAccountDelegate,
+WSDHomeBtnListViewDelegate
 >
 /** 头部视图*/
 @property (nonatomic, strong) UIView *topNavView;
@@ -71,6 +72,10 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -131,7 +136,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         } ];
     }
     else {
-        [self dismiss];
+        [self coverViewdismiss];
     }
 }
 
@@ -139,7 +144,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 #pragma mark - 监听代理选定cell获取选中账号
 - (void)PopListTableViewSelectedCell:(NSInteger)index {
     // 关闭菜单
-     [self dismiss];
+     [self coverViewdismiss];
 }
 #pragma mark - 监听代理更新下拉菜单
 - (void)PopListTableViewUpdateListHeight {
@@ -159,15 +164,49 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         // 设置蒙版的frame
         _coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _coverView.backgroundColor = [UIColor colorWithHex:0x474747];
+        _coverView.userInteractionEnabled = YES;
         [self.view addSubview:_coverView];
-        UITapGestureRecognizer *overViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
-        [_searchImageView addGestureRecognizer:overViewTap];
+        UITapGestureRecognizer *overViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(coverViewdismiss)];
+        [_coverView addGestureRecognizer:overViewTap];
     }
     return _coverView;
 }
 
+#pragma mark - 按钮菜单的点击方法
+-(void)WSDHomeBtnListViewClick:(UIButton *)sender{
+    NSLog(@"点击%ld跳转",sender.tag);
+    switch (sender.tag) {
+        case 0:
+            //学习进度
+            break;
+        case 1:
+            //在线报名
+            break;
+        case 2:
+            //成绩查询
+        {
+            WSDScoreViewController *scoreVc = [[WSDScoreViewController alloc] init];
+            [self.navigationController pushViewController:scoreVc animated:YES];
+        }
+            break;
+        case 3:
+            //在线测试
+            break;
+        case 4:
+            //双优课堂
+            break;
+        case 5:
+            //站内活动
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
 #pragma mark - 下拉菜单弹回
-- (void)dismiss
+- (void)coverViewdismiss
 {
     NSLog(@"关闭");
     self.accountList.isOpen = NO;
@@ -339,6 +378,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     if (_btnOrderView == nil) {
         _btnOrderView = [[WSDHomeBtnListView alloc] initWithFrame:CGRectMake(0, TopScrollViewH, SCREEN_WIDTH, BtnOrderViewH)];
         _btnOrderView.backgroundColor = [UIColor orangeColor];
+        _btnOrderView.delegate = self;
     }
     return _btnOrderView;
 }

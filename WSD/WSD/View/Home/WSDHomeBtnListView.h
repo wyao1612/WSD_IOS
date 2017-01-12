@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSDHomeBtnListView : UIView
+@protocol WSDHomeBtnListViewDelegate <NSObject>
 
+@optional
+-(void)WSDHomeBtnListViewClick:(UIButton*)sender;
+
+@end
+
+@interface WSDHomeBtnListView : UIView
+/** 代理对象*/
+@property(nonatomic,assign) id<WSDHomeBtnListViewDelegate> delegate;
 @end

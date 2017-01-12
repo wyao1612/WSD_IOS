@@ -20,12 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = WHITECOLOR;
+     self.navigationController.navigationBarHidden = NO;
     [self initData];//初始化数据
     [self.view addSubview:self.contentView];
     
     //设置默认左侧返回按钮
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 9, 18)];
-    [leftBtn setBackgroundImage:IMAGE(@"classify36") forState:UIControlStateNormal];
+    [leftBtn setBackgroundImage:IMAGE(@"back") forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(leftBackAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBarItem;

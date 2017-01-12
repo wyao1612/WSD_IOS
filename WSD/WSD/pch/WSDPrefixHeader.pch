@@ -26,6 +26,9 @@
 #import "UserModel.h"   //用户数据模型
 #import "UserProcessor.h"
 
+//------------成绩----------------
+#import "WSDScoreViewController.h"//我的成绩
+
 
 /** view头文件引入*/
 #import "SettingViewController.h"   //设置页

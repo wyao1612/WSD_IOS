@@ -53,6 +53,9 @@
 		12C84FB71E2629B3009A9882 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FB31E2629B3009A9882 /* UserInfoViewController.m */; };
 		12C84FBA1E262CB1009A9882 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FB91E262CB1009A9882 /* UserManager.m */; };
 		12C84FBD1E262CE2009A9882 /* UserProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FBC1E262CE2009A9882 /* UserProcessor.m */; };
+		12C84FC01E275D49009A9882 /* YW_SegmentSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FBF1E275D49009A9882 /* YW_SegmentSwitch.m */; };
+		12C84FC41E2762F8009A9882 /* WSDScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FC31E2762F8009A9882 /* WSDScoreViewController.m */; };
+		12C84FCA1E27792B009A9882 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C84FC91E27792B009A9882 /* UINavigationBar+Awesome.m */; };
 		12DA46401E24702C00159CD6 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA463F1E24702C00159CD6 /* UIImage+Extension.m */; };
 		12DA46431E24704100159CD6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46421E24704100159CD6 /* UIView+Extension.m */; };
 		12DA46461E24705E00159CD6 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DA46451E24705E00159CD6 /* NSDate+Extension.m */; };
@@ -178,6 +181,12 @@
 		12C84FB91E262CB1009A9882 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		12C84FBB1E262CE2009A9882 /* UserProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProcessor.h; sourceTree = "<group>"; };
 		12C84FBC1E262CE2009A9882 /* UserProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProcessor.m; sourceTree = "<group>"; };
+		12C84FBE1E275D49009A9882 /* YW_SegmentSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YW_SegmentSwitch.h; sourceTree = "<group>"; };
+		12C84FBF1E275D49009A9882 /* YW_SegmentSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YW_SegmentSwitch.m; sourceTree = "<group>"; };
+		12C84FC21E2762F8009A9882 /* WSDScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDScoreViewController.h; sourceTree = "<group>"; };
+		12C84FC31E2762F8009A9882 /* WSDScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDScoreViewController.m; sourceTree = "<group>"; };
+		12C84FC81E27792B009A9882 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		12C84FC91E27792B009A9882 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		12DA463E1E24702C00159CD6 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		12DA463F1E24702C00159CD6 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		12DA46411E24704100159CD6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
@@ -315,6 +324,8 @@
 			children = (
 				12C84FA81E262587009A9882 /* YB_Tools.h */,
 				12C84FA91E262587009A9882 /* YB_Tools.m */,
+				12C84FC81E27792B009A9882 /* UINavigationBar+Awesome.h */,
+				12C84FC91E27792B009A9882 /* UINavigationBar+Awesome.m */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -440,12 +451,15 @@
 		12C84F801E261001009A9882 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				12C84FC11E2762D5009A9882 /* Score */,
 				12C84F811E261001009A9882 /* PopListTableViewController.h */,
 				12C84F821E261001009A9882 /* PopListTableViewController.m */,
 				12C84F831E261001009A9882 /* WSDHomeViewController.h */,
 				12C84F841E261001009A9882 /* WSDHomeViewController.m */,
 				12C84F851E261001009A9882 /* WSDSeacherViewController.h */,
 				12C84F861E261001009A9882 /* WSDSeacherViewController.m */,
+				12C84FBE1E275D49009A9882 /* YW_SegmentSwitch.h */,
+				12C84FBF1E275D49009A9882 /* YW_SegmentSwitch.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -504,6 +518,15 @@
 				12C84FB31E2629B3009A9882 /* UserInfoViewController.m */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		12C84FC11E2762D5009A9882 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				12C84FC21E2762F8009A9882 /* WSDScoreViewController.h */,
+				12C84FC31E2762F8009A9882 /* WSDScoreViewController.m */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 		12F831721E1CA22200B0723D /* Model */ = {
@@ -896,6 +919,7 @@
 				12DA46431E24704100159CD6 /* UIView+Extension.m in Sources */,
 				129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */,
 				12C84FA51E261001009A9882 /* WSDNavigationController.m in Sources */,
+				12C84FC41E2762F8009A9882 /* WSDScoreViewController.m in Sources */,
 				12C84FBA1E262CB1009A9882 /* UserManager.m in Sources */,
 				12DA46551E24C67F00159CD6 /* LoginProcessor.m in Sources */,
 				129B94D81E1D1D360097A9A8 /* BaseObject.m in Sources */,
@@ -912,10 +936,12 @@
 				12C84FB51E2629B3009A9882 /* SettingViewController.m in Sources */,
 				12C84FA11E261001009A9882 /* WSDMeViewController.m in Sources */,
 				12C84F9D1E261001009A9882 /* WSDHomeTableViewCell.m in Sources */,
+				12C84FCA1E27792B009A9882 /* UINavigationBar+Awesome.m in Sources */,
 				12C84FA41E261001009A9882 /* STL_BaseViewController.m in Sources */,
 				129B94D51E1D1CBD0097A9A8 /* ViewModelManager.m in Sources */,
 				12C84FB41E2629B3009A9882 /* APIChosseTableViewController.m in Sources */,
 				122661C21E1BBBD50009F045 /* UIBarButtonItem+YB_Extension.m in Sources */,
+				12C84FC01E275D49009A9882 /* YW_SegmentSwitch.m in Sources */,
 				122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */,
 				122661C61E1BBBD50009F045 /* UILabel+Category.m in Sources */,
 				12C84F9C1E261001009A9882 /* WSDHomeButton.m in Sources */,

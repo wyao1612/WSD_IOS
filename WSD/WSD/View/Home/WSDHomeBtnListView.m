@@ -75,8 +75,12 @@
 
 
 #pragma mark - 按钮点击事件
-- (void)BtnClick:(UIButton *)sender {
-    NSLog(@"点击%ld跳转",sender.tag);
+- (void)BtnClick:(UIButton *)sender { 
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(WSDHomeBtnListViewClick:)]) {
+            [self.delegate WSDHomeBtnListViewClick:sender];
+        }
+    }
 }
 
 
