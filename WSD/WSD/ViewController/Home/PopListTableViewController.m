@@ -15,6 +15,7 @@ static NSString * const ID = @"cell";
 @interface PopListTableViewController ()
 @property (nonatomic, assign) NSInteger selectedCol;
 @property (nonatomic, strong) UIView* footView;
+@property (nonatomic, strong) NSIndexPath* SelectedIndexPath;
 @end
 
 @implementation PopListTableViewController
@@ -80,7 +81,14 @@ static NSString * const ID = @"cell";
 // cell选中事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-     _selectedCol = indexPath.row;
+    NSLog(@"-------->选中第%ld行",indexPath.row);
+    // 判断记录的位置是否和上一次相同,(是否是左侧同一个cell点了两下)
+    if (self.SelectedIndexPath == indexPath) {
+        return;
+    }
+    // 记录一下当前选中的左侧的位置
+    self.SelectedIndexPath = indexPath;
+
     // 通知代理
     if (self.delegate !=nil) {
         if ([self.delegate respondsToSelector:@selector(PopListTableViewSelectedCell:)]) {

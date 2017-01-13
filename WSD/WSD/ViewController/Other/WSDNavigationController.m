@@ -16,7 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
+
+- (void)pushViewController:(UIViewController*)viewController animated:(BOOL)animated
+{
+    
+    // 如果这个控制器不是第一个控制器,那么应该设置隐藏tabbar的属性
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

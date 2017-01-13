@@ -123,4 +123,12 @@
     // Configure the view for the selected state
 }
 
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
+
+    [super setHighlighted:highlighted animated:animated];
+    
+//    self.selectView.hidden = !highlighted;
+}
+
 @end

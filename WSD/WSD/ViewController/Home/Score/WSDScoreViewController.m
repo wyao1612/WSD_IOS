@@ -37,7 +37,7 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     YW_SegmentSwitch *segmetView = [[YW_SegmentSwitch alloc] init];
-    segmetView.frame = CGRectMake(0, 0, 240, 35);
+    segmetView.frame = CGRectMake(0, 0, 200, 35);
     segmetView.backgroundColor = [UIColor whiteColor];
     segmetView.cornerRadius = 15;
     segmetView.titleNormalColor = SHENTEXTCOLOR;
@@ -48,6 +48,12 @@ UITableViewDataSource
     segmetView.layer.borderColor = [[UIColor blackColor] CGColor];
     
     [self.navigationItem setTitleView:segmetView];
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] init];
+    rightBarItem.title = @"历史成绩";
+    rightBarItem.tintColor = SHENTEXTCOLOR;
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+    
     
     [self.view addSubview:self.tableview];
     [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];

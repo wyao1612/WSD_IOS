@@ -27,8 +27,6 @@ SDCycleScrollViewDelegate,
 PopListTableViewAccountDelegate,
 WSDHomeBtnListViewDelegate
 >
-/** 头部视图*/
-@property (nonatomic, strong) UIView *topNavView;
 /** 头部头像*/
 @property (nonatomic, strong) UIImageView *iconImageView;
 /** 下拉按钮*/
@@ -69,25 +67,34 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 @implementation WSDHomeViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNav];
     [self setupUI];
     [self setPopMenu];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:GLOBALCOLOR] forBarMetrics:UIBarMetricsDefault];
+    
+}
+-(void)setNav{
+
+    //两个按钮的父类view
+    UIView *rightButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    self.iconImageView.frame = CGRectMake(0, 0, 40, 40);
+    [rightButtonView addSubview:self.iconImageView];
+    self.listBtn.frame = CGRectMake(50, 20, 10, 10);
+    [rightButtonView addSubview:self.listBtn];
+    UIBarButtonItem *rightCunstomButtonView = [[UIBarButtonItem alloc] initWithCustomView:rightButtonView];
+    self.navigationItem.leftBarButtonItem = rightCunstomButtonView;
+}
+
+
 - (void)setupUI{
     
     self.view.backgroundColor = BACKGROUNDCOLOR;
-    
-    [self.view addSubview:self.topNavView];
     [self.view addSubview:self.tableView];
 
 }
@@ -125,7 +132,8 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         NSLog(@"打开");
         // 添加对应蒙版
         self.coverView.hidden = NO;
-        [self.coverView addSubview:self.accountList.view];
+        self.accountList.view.hidden = NO;
+        [self.view addSubview:self.accountList.view];
         // 设置内容的高度
         CGFloat height = self.dataSource.count * 60;
         self.accountList.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, 0);
@@ -162,7 +170,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 {
     if (_coverView == nil) {
         // 设置蒙版的frame
-        _coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _coverView.backgroundColor = [UIColor colorWithHex:0x474747];
         _coverView.userInteractionEnabled = YES;
         [self.view addSubview:_coverView];
@@ -208,6 +216,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 #pragma mark - 下拉菜单弹回
 - (void)coverViewdismiss
 {
+    
     NSLog(@"关闭");
     self.accountList.isOpen = NO;
     [UIView animateWithDuration:0.3 animations:^{
@@ -219,6 +228,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     } completion:^(BOOL finished) {
         self.coverView.hidden = YES;
         self.coverView.backgroundColor = [UIColor colorWithHex:0x474747];
+         self.accountList.view.hidden = YES;
     }];
 }
 
@@ -241,30 +251,6 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 #pragma mark --上拉加载更多数据
 - (void)LoadMoreData {
    
-}
-
-
-#pragma mark -  布局头部视图
--(void)layoutTopNavSubviews{
-    
-    self.iconImageView.sd_layout
-    .topSpaceToView(self.topNavView,24)
-    .leftSpaceToView(self.topNavView,12)
-    .widthIs(35)
-    .heightIs(35);
-    
-    self.listBtn.sd_layout
-    .centerYEqualToView(self.iconImageView)
-    .leftSpaceToView(self.iconImageView,4)
-    .widthIs(10)
-    .heightIs(10);
-    
-    
-    self.searchImageView.sd_layout
-    .centerYEqualToView(self.iconImageView)
-    .leftSpaceToView(self.listBtn,8)
-    .rightSpaceToView(self.topNavView,10)
-    .heightIs(35);
 }
 
 #pragma mark -  布局推荐课程视图
@@ -331,7 +317,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 #pragma mark - 懒加载控件
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NaviBar_HEIGHT,SCREEN_WIDTH ,SCREEN_HEIGHT - 64 - 49) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT - 49) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -401,21 +387,6 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         [_HeaderView addSubview:self.sectionView];
     }
     return _HeaderView;
-}
-
--(UIView *)topNavView{
-    if (!_topNavView) {
-        _topNavView= [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,64)];
-        _topNavView.backgroundColor = GLOBALCOLOR;
-        
-        [_topNavView addSubview:self.iconImageView];
-        [_topNavView addSubview:self.listBtn];
-        [_topNavView addSubview:self.searchImageView];
-        
-        [self layoutTopNavSubviews];
-    }
-    
-    return _topNavView;
 }
 
 -(UIImageView *)iconImageView{

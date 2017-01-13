@@ -27,7 +27,13 @@
 #import "UserProcessor.h"
 
 //------------成绩----------------
+#import "WSDNavigationController.h"
+#import "WSDHomeViewController.h"
+#import "WSDNewsViewController.h"
+#import "WSDStudyViewController.h"
+#import "WSDMeViewController.h"
 #import "WSDScoreViewController.h"//我的成绩
+
 
 
 /** view头文件引入*/
@@ -54,6 +60,7 @@
 //#import "YB_SliderBtnView.h"//底部滚动条button
 //#import "BMChineseSort.h"   //拼音排序
 #import "YB_Tools.h"
+#import "UIImage+Image.h"
 
 
 /** 第三方头文件导入*/

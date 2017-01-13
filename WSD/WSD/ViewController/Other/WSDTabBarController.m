@@ -7,10 +7,7 @@
 //
 
 #import "WSDTabBarController.h"
-#import "WSDHomeViewController.h"
-#import "WSDNewsViewController.h"
-#import "WSDStudyViewController.h"
-#import "WSDMeViewController.h"
+
 
 @interface WSDTabBarController ()
 
@@ -34,28 +31,48 @@
  */
 - (void)setupChildVcs
 {
-    [self setupChildVc:[[WSDHomeViewController alloc] init] title:@"首页" image:@"bottom-home" selectedImage:@"bottom-home-select"];
-    [self setupChildVc:[[WSDNewsViewController alloc] init] title:@"消息" image:@"bottom-msg" selectedImage:@"bottom-msg-select"];
-    [self setupChildVc:[[WSDStudyViewController alloc] init] title:@"学习" image:@"bottom-study" selectedImage:@"bottom-study-select"];
-    [self setupChildVc:[[WSDMeViewController alloc] init] title:@"我的" image:@"bottom-user" selectedImage:@"bottom-user-select"];
+    NSMutableArray* vcs = [NSMutableArray array];
+    
+    [vcs addObject:[self loadChildViewControllerWithClassName:@"WSDHomeViewController" andImageName:@"bottom-home" andTitle:@"首页"]];
+    [vcs addObject:[self loadChildViewControllerWithClassName:@"WSDNewsViewController" andImageName:@"bottom-msg" andTitle:@"消息"]];
+    [vcs addObject:[self loadChildViewControllerWithClassName:@"WSDStudyViewController" andImageName:@"bottom-study" andTitle:@"学习"]];
+    [vcs addObject:[self loadChildViewControllerWithClassName:@"WSDMeViewController" andImageName:@"bottom-user" andTitle:@"我的"]];
+    self.viewControllers = vcs.copy;
+    
+    self.tabBar.tintColor = [UIColor colorWithHex:0x7c470a];
     
 }
-
 /**
- * 添加一个子控制器
- * @param title 文字
- * @param image 图片
- * @param selectedImage 选中时的图片
+ *  根据类名/图片名/标题 创建被导航控制器包好的子控制器
  */
-- (void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
+- (UIViewController*)loadChildViewControllerWithClassName:(NSString*)className andImageName:(NSString*)imageName andTitle:(NSString*)title
 {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
-    [self addChildViewController:nav];
+    // 创建子控制器
+    Class Clz = NSClassFromString(className);
+    UIViewController* vc = [[Clz alloc] init];
     
-    nav.tabBarItem.title = title;
-    nav.tabBarItem.image = [UIImage imageNamed:image];
-    nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+    //    vc.title = title;
+    vc.tabBarItem.title = title;
+    
+    // 获取image
+    UIImage* image = [UIImage imageNamed:imageName];
+    // 变成使用原始的图片
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    // 设置不选中图片
+    vc.tabBarItem.image = image;
+    
+    // 获取image
+    UIImage* imageSelected = [UIImage imageNamed:[imageName stringByAppendingString:@"-select"]];
+    // 变成使用原始的图片
+    imageSelected = [imageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    // 设置选中图片
+    vc.tabBarItem.selectedImage = imageSelected;
+    
+    // 创建导航控制器把他包起来
+    WSDNavigationController* nav = [[WSDNavigationController alloc] initWithRootViewController:vc];
+    
+    return nav;
 }
 
 /**
