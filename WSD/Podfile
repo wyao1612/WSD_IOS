@@ -24,6 +24,7 @@ pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/QQ'
 pod 'Masonry', '~> 1.0.2'
 pod 'JPush', '~> 2.2.0.1'
+pod 'IQKeyboardManager', '~> 4.0.8'
 
   target 'WSDTests' do
     inherit! :search_paths
