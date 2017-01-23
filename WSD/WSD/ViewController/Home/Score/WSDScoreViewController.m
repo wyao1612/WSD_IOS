@@ -39,7 +39,7 @@ UITableViewDataSource
     YW_SegmentSwitch *segmetView = [[YW_SegmentSwitch alloc] init];
     segmetView.frame = CGRectMake(0, 0, 200, 35);
     segmetView.backgroundColor = [UIColor whiteColor];
-    segmetView.cornerRadius = 15;
+    segmetView.cornerRadius = 17.5;
     segmetView.titleNormalColor = SHENTEXTCOLOR;
     segmetView.titleSelectedColor = WHITECOLOR;
     segmetView.selectionColor = [UIColor colorWithHex:0xfecb2f];
