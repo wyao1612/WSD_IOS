@@ -85,5 +85,7 @@
 #import <UShareUI/UShareUI.h>           //友盟分享
 #import <UMSocialCore/UMSocialCore.h>
 //#import <AlipaySDK/AlipaySDK.h>
+#import <IQKeyboardManager.h>
+#import <IQKeyboardReturnKeyHandler.h>
 
 #endif /* GolfPrefixHeader_pch */

@@ -53,8 +53,14 @@
 //    }
 }
 
-
-
+/** IQKeyboardManager设置*/
+-(void)setKeyBoardAPI{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;//关闭设置为NO, 默认值为NO.
+    manager.shouldResignOnTouchOutside = YES;//这个是点击空白区域键盘收缩的开关
+    manager.enableAutoToolbar = NO;//这个是它自带键盘工具条开关
+    [manager setToolbarManageBehaviour:IQAutoToolbarBySubviews];//设置键盘returnKey的关键字 ,点击键盘上的next键，自动跳转到下一个输入框，最后一个输入框点击完成，自动收起键盘。
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -62,9 +68,12 @@
     self.window.backgroundColor = BACKGROUNDCOLOR;
     [self settingSVProgressHUD];//设置HUD
     [self settingAPI];          //设置API
+
+    
     //注册用户资料刷新
 //    [GOLFNotificationCenter addObserver:self selector:@selector(readUserInfo) name:UserInfoUpdate object:nil];
     [self readUserInfo];        //读取用户资料
+     [self setKeyBoardAPI];
 //    [self startLoacation];        //开启定位读取用户位置
 //    [self settingUMAPI];            //设置友盟
     

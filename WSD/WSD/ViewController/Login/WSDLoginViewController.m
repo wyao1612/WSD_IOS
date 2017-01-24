@@ -41,16 +41,19 @@
 /** 当前输入模式 0 ==登录 1==注册*/
 @property (nonatomic, assign) NSInteger currentIndex;
 
-
 @end
 
-@implementation WSDLoginViewController
+@implementation WSDLoginViewController{
+    /** 键盘处理返回键的样式*/
+    IQKeyboardReturnKeyHandler *returnHandler;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = WHITECOLOR;
     self.isAutoBack = NO;
+
     [self.view addSubview:self.leftBackBtn];
     [self.view addSubview:self.logoIv];
     [self.view addSubview:self.loginView];
@@ -58,7 +61,16 @@
     [self.view addSubview:self.registerLabel];
     [self.view addSubview:self.registerBtn];
     [self.view addSubview:self.forgetBtn];
+    
+    returnHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
+    returnHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
 }
+
+- (void)dealloc
+{
+    returnHandler = nil;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
