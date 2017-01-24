@@ -14,19 +14,27 @@
 
 /** 基础相关头文件*/
 #import "WSDConstant.h" //常用宏
-#import "ViewModelFactory.h" //基础工厂
-#import "ViewModelManager.h" //基础业务类
+#import "BusinessFactory.h" //基础工厂
+#import "BusinessManager.h" //基础业务类
 #import "WSDTypeDef.h"     //常用type
 #import "GolfMJExtensionConfig.h"
 /** 业务相关头文件*/
-#import "STL_BaseViewController.h"
+//------------首页----------------
+#import "HomeManager.h"
+//------------个人----------------
+#import "UserManager.h"
+//------------登录----------------
+#import "LoginManager.h"
+
+
 
 /** model头文件引入*/
 //------------登录----------------
 #import "UserModel.h"   //用户数据模型
 #import "UserProcessor.h"
 
-//------------成绩----------------
+//------------业务控制器----------------
+#import "STL_BaseViewController.h"
 #import "WSDNavigationController.h"
 #import "WSDHomeViewController.h"
 #import "WSDNewsViewController.h"

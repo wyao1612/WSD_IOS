@@ -195,17 +195,14 @@
     
     GOLFWeakObj(self);
     [SVProgressHUD showWithStatus:@"正在登录中"];
-    /*
-     [ShareBusinessManager.loginManager postLoginWithParameters:@{@"deviceType":@1, @"password":password, @"userName":username} success:^(id responObject) {
+    
+     [ShareBusinessManager.loginManager postLoginWithParameters:@{@"deviceType":@1, @"password":_passwordTf.text, @"userName":_phoneTf.text} success:^(id responObject) {
      //登录成功
      [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-     [weakself.navigationController dismissViewControllerAnimated:YES completion:nil];
+         [weakself.navigationController dismissViewControllerAnimated:YES completion:nil];
      } failure:^(NSInteger errCode, NSString *errorMsg) {
-     [SVProgressHUD showErrorWithStatus:errorMsg];
+         [SVProgressHUD showErrorWithStatus:errorMsg];
      }];
-     */
-
-    
 }
 
 /** 判断是否满足登录要求*/

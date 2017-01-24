@@ -9,11 +9,40 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface UserModel : NSObject
-
-/** 用户头像*/
-@property (nonatomic, copy) NSString *avatar;
-
+/**
+ address	地址	string
+ areaId	地区Id	number
+ cellphone	用户手机号	string
+ createTime	注册时间	string
+ email	邮箱	string
+ gradeId	等级Id
+ gradeName	用户等级名称	string
+ handicap	差点	number
+ headUrl	头像	string
+ id	用户id	number
+ money	用户小鸟币	number
+ name	用户姓名	string
+ nickName	用户昵称	string
+ password	密码	string
+ personSign	个性签名	string
+ polesNumber	杆数	number
+ score	用户拥有的积分	number
+ sex	性别	number	性别：0-保密，1-男，2-女
+ sexName	性别备注	string
+ sort	等级标识	number
+ status	用户状态	number
+ statusName	用户状态值	string
+ ticket	ticket	string
+ type	用户类型	number
+ typeName	用户类型备注	string
+ userFrom	用户来源	number
+ userFromName	用户来源备注	string
+ userName	账号	string
+ polesNumber	杆数	number
+ handicap	差点	number
+ */
 
 
 @property (nonatomic, copy) NSString *address;
@@ -47,18 +76,11 @@
 @property (nonatomic, copy) NSString *handicap;
 
 
-
-
-
-
-
-
 //当前登录状态
 @property (nonatomic, assign) BOOL isLogin;
-
 /** 获取用户模型*/
 + (instancetype)sharedUserModel;
-//退出登录。清空数据
+//退出登录,清空数据
 +(void)attempDealloc;
 
 @end
