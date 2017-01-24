@@ -25,6 +25,12 @@
 		122661C61E1BBBD50009F045 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661B81E1BBBD50009F045 /* UILabel+Category.m */; };
 		122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661BA1E1BBBD50009F045 /* UIScrollView+UITouch.m */; };
 		122661CC1E1BBBDE0009F045 /* NSArray+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661CB1E1BBBDE0009F045 /* NSArray+Properties.m */; };
+		1249A3D91E35CEC0004CF85E /* WSDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */; };
+		1249A3DD1E35D9E3004CF85E /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3DC1E35D9E3004CF85E /* JKCountDownButton.m */; };
+		1249A3E51E35D9EB004CF85E /* MenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3E01E35D9EB004CF85E /* MenuModel.m */; };
+		1249A3E61E35D9EB004CF85E /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3E21E35D9EB004CF85E /* MenuTableViewCell.m */; };
+		1249A3E71E35D9EB004CF85E /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3E41E35D9EB004CF85E /* MenuView.m */; };
+		1249A3EA1E35EC5C004CF85E /* STL_CommonIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3E91E35EC5C004CF85E /* STL_CommonIdea.m */; };
 		129B94B41E1D1AA90097A9A8 /* ViewModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94B31E1D1AA90097A9A8 /* ViewModelFactory.m */; };
 		129B94B81E1D1B020097A9A8 /* HomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94B71E1D1B020097A9A8 /* HomeInfoModel.m */; };
 		129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B94BB1E1D1B100097A9A8 /* UserModel.m */; };
@@ -126,6 +132,18 @@
 		122661CE1E1BC0080009F045 /* WSDConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDConstant.h; sourceTree = "<group>"; };
 		122661CF1E1BC0160009F045 /* WSDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDPrefixHeader.pch; sourceTree = "<group>"; };
 		122661D01E1BC0260009F045 /* WSDTypeDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDTypeDef.h; sourceTree = "<group>"; };
+		1249A3D71E35CEC0004CF85E /* WSDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLoginViewController.h; sourceTree = "<group>"; };
+		1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLoginViewController.m; sourceTree = "<group>"; };
+		1249A3DB1E35D9E3004CF85E /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		1249A3DC1E35D9E3004CF85E /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		1249A3DF1E35D9EB004CF85E /* MenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuModel.h; sourceTree = "<group>"; };
+		1249A3E01E35D9EB004CF85E /* MenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuModel.m; sourceTree = "<group>"; };
+		1249A3E11E35D9EB004CF85E /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		1249A3E21E35D9EB004CF85E /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		1249A3E31E35D9EB004CF85E /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		1249A3E41E35D9EB004CF85E /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		1249A3E81E35EC5C004CF85E /* STL_CommonIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STL_CommonIdea.h; sourceTree = "<group>"; };
+		1249A3E91E35EC5C004CF85E /* STL_CommonIdea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STL_CommonIdea.m; sourceTree = "<group>"; };
 		129B94B21E1D1AA90097A9A8 /* ViewModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelFactory.h; sourceTree = "<group>"; };
 		129B94B31E1D1AA90097A9A8 /* ViewModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelFactory.m; sourceTree = "<group>"; };
 		129B94B61E1D1B020097A9A8 /* HomeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInfoModel.h; sourceTree = "<group>"; };
@@ -322,10 +340,14 @@
 		1226618E1E1BBAA00009F045 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1249A3DE1E35D9EB004CF85E /* PopMenu */,
+				1249A3DA1E35D9E3004CF85E /* JKCountDownButton */,
 				12C84FA81E262587009A9882 /* YB_Tools.h */,
 				12C84FA91E262587009A9882 /* YB_Tools.m */,
 				12C84FC81E27792B009A9882 /* UINavigationBar+Awesome.h */,
 				12C84FC91E27792B009A9882 /* UINavigationBar+Awesome.m */,
+				1249A3E81E35EC5C004CF85E /* STL_CommonIdea.h */,
+				1249A3E91E35EC5C004CF85E /* STL_CommonIdea.m */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -387,6 +409,37 @@
 			path = pch;
 			sourceTree = "<group>";
 		};
+		1249A3D61E35CE6E004CF85E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1249A3D71E35CEC0004CF85E /* WSDLoginViewController.h */,
+				1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1249A3DA1E35D9E3004CF85E /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				1249A3DB1E35D9E3004CF85E /* JKCountDownButton.h */,
+				1249A3DC1E35D9E3004CF85E /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
+		1249A3DE1E35D9EB004CF85E /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1249A3DF1E35D9EB004CF85E /* MenuModel.h */,
+				1249A3E01E35D9EB004CF85E /* MenuModel.m */,
+				1249A3E11E35D9EB004CF85E /* MenuTableViewCell.h */,
+				1249A3E21E35D9EB004CF85E /* MenuTableViewCell.m */,
+				1249A3E31E35D9EB004CF85E /* MenuView.h */,
+				1249A3E41E35D9EB004CF85E /* MenuView.m */,
+			);
+			path = PopMenu;
+			sourceTree = "<group>";
+		};
 		129B94B51E1D1B020097A9A8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +492,7 @@
 		12C84F7F1E261001009A9882 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1249A3D61E35CE6E004CF85E /* Login */,
 				12C84F801E261001009A9882 /* Home */,
 				12C84F871E261001009A9882 /* Me */,
 				12C84F8A1E261001009A9882 /* News */,
@@ -907,6 +961,7 @@
 				12C84FA21E261001009A9882 /* WSDNewsViewController.m in Sources */,
 				129B94B81E1D1B020097A9A8 /* HomeInfoModel.m in Sources */,
 				12DA46521E24C64900159CD6 /* LoginManager.m in Sources */,
+				1249A3EA1E35EC5C004CF85E /* STL_CommonIdea.m in Sources */,
 				12C84FBD1E262CE2009A9882 /* UserProcessor.m in Sources */,
 				122661C01E1BBBD50009F045 /* NSDictionary+Log.m in Sources */,
 				122661BF1E1BBBD50009F045 /* NSDate+YB_Extension.m in Sources */,
@@ -934,20 +989,25 @@
 				122661A81E1BBB520009F045 /* UIScrollView+EmptyDataSet.m in Sources */,
 				129B94D21E1D1B910097A9A8 /* BaseManager.m in Sources */,
 				12C84FB51E2629B3009A9882 /* SettingViewController.m in Sources */,
+				1249A3E61E35D9EB004CF85E /* MenuTableViewCell.m in Sources */,
 				12C84FA11E261001009A9882 /* WSDMeViewController.m in Sources */,
 				12C84F9D1E261001009A9882 /* WSDHomeTableViewCell.m in Sources */,
+				1249A3DD1E35D9E3004CF85E /* JKCountDownButton.m in Sources */,
 				12C84FCA1E27792B009A9882 /* UINavigationBar+Awesome.m in Sources */,
+				1249A3E51E35D9EB004CF85E /* MenuModel.m in Sources */,
 				12C84FA41E261001009A9882 /* STL_BaseViewController.m in Sources */,
 				129B94D51E1D1CBD0097A9A8 /* ViewModelManager.m in Sources */,
 				12C84FB41E2629B3009A9882 /* APIChosseTableViewController.m in Sources */,
 				122661C21E1BBBD50009F045 /* UIBarButtonItem+YB_Extension.m in Sources */,
 				12C84FC01E275D49009A9882 /* YW_SegmentSwitch.m in Sources */,
+				1249A3D91E35CEC0004CF85E /* WSDLoginViewController.m in Sources */,
 				122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */,
 				122661C61E1BBBD50009F045 /* UILabel+Category.m in Sources */,
 				12C84F9C1E261001009A9882 /* WSDHomeButton.m in Sources */,
 				12C84FA01E261001009A9882 /* WSDSeacherViewController.m in Sources */,
 				1226615C1E1BAD4B0009F045 /* main.m in Sources */,
 				12DA46671E24E2D500159CD6 /* GolfMJExtensionConfig.m in Sources */,
+				1249A3E71E35D9EB004CF85E /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

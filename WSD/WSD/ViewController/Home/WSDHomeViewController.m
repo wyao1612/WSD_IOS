@@ -69,7 +69,6 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNav];
     [self setupUI];
     [self setPopMenu];
 }
@@ -77,7 +76,11 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:GLOBALCOLOR] forBarMetrics:UIBarMetricsDefault];
-    
+    [self setNav];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:WHITECOLOR] forBarMetrics:UIBarMetricsDefault];
 }
 -(void)setNav{
 
@@ -205,6 +208,9 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
             break;
         case 5:
             //站内活动
+        {
+            [self presentViewController:LoginNavi animated:YES completion:nil];
+        }
             break;
             
         default:
