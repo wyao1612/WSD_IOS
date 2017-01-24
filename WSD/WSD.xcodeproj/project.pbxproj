@@ -71,6 +71,7 @@
 		12E94AF01E1E180F00927F63 /* BaseProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AEF1E1E180F00927F63 /* BaseProcessor.m */; };
 		12E94AF31E1E181500927F63 /* HomeProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E94AF21E1E181500927F63 /* HomeProcessor.m */; };
 		12E9DD761E371F3D008A1FC9 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E9DD751E371F3D008A1FC9 /* BusinessManager.m */; };
+		12E9DD791E372CE3008A1FC9 /* WSDForgetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E9DD781E372CE3008A1FC9 /* WSDForgetPassWordViewController.m */; };
 		25E05DFA51FB735EAC56F388 /* libPods-WSD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7567F8B0699E99D733F647 /* libPods-WSD.a */; };
 		53AF43AAD7CA284C80E94B72 /* libPods-WSDTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */; };
 /* End PBXBuildFile section */
@@ -223,6 +224,8 @@
 		12E94AF21E1E181500927F63 /* HomeProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProcessor.m; sourceTree = "<group>"; };
 		12E9DD741E371F3D008A1FC9 /* BusinessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessManager.h; sourceTree = "<group>"; };
 		12E9DD751E371F3D008A1FC9 /* BusinessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessManager.m; sourceTree = "<group>"; };
+		12E9DD771E372CE3008A1FC9 /* WSDForgetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDForgetPassWordViewController.h; sourceTree = "<group>"; };
+		12E9DD781E372CE3008A1FC9 /* WSDForgetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDForgetPassWordViewController.m; sourceTree = "<group>"; };
 		50C4AAE8BFCF065F1DA5640F /* Pods-WSD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSD/Pods-WSD.release.xcconfig"; sourceTree = "<group>"; };
 		69C84A764BA449CBAC58795C /* Pods-WSDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSDTests/Pods-WSDTests.release.xcconfig"; sourceTree = "<group>"; };
 		863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSDTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,6 +417,8 @@
 			children = (
 				1249A3D71E35CEC0004CF85E /* WSDLoginViewController.h */,
 				1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */,
+				12E9DD771E372CE3008A1FC9 /* WSDForgetPassWordViewController.h */,
+				12E9DD781E372CE3008A1FC9 /* WSDForgetPassWordViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -971,6 +976,7 @@
 				12C84FA71E261001009A9882 /* WSDStudyViewController.m in Sources */,
 				12E94AF31E1E181500927F63 /* HomeProcessor.m in Sources */,
 				12DA46401E24702C00159CD6 /* UIImage+Extension.m in Sources */,
+				12E9DD791E372CE3008A1FC9 /* WSDForgetPassWordViewController.m in Sources */,
 				12C84F9A1E261001009A9882 /* AccountTableViewCell.m in Sources */,
 				12DA46431E24704100159CD6 /* UIView+Extension.m in Sources */,
 				129B94C71E1D1B100097A9A8 /* UserModel.m in Sources */,

@@ -76,7 +76,7 @@
 
 -(void)setAccountModel:(UserModel *)accountModel{
     _accountModel = accountModel;
-    self.avatar.image = [UIImage imageNamed:accountModel.avatar];// 头像
+    self.avatar.image = [UIImage imageNamed:accountModel.headUrl];// 头像
     self.nameLabel.text = accountModel.name;// 名字
     self.IdLabel.text = accountModel.ID;
 }

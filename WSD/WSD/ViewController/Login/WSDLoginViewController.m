@@ -7,6 +7,7 @@
 //
 
 #import "WSDLoginViewController.h"
+#import "WSDForgetPassWordViewController.h"
 
 @interface WSDLoginViewController ()
 /** 左上返回*/
@@ -29,17 +30,12 @@
 @property (nonatomic, strong) UILabel *registerLabel;
 /** 注册账户按钮*/
 @property (nonatomic, strong) UIButton *forgetBtn;
-/** 分割线2*/
-@property (nonatomic, strong) UIView *secondLineView;
 /** 登录按钮*/
 @property (nonatomic, strong) UIButton *loginBtn;
 /** 线条1*/
 @property (nonatomic, strong) UIView *simpleLine_0;
 /** 线条2*/
 @property (nonatomic, strong) UIView *simpleLine_1;
-
-/** 当前输入模式 0 ==登录 1==注册*/
-@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
 
@@ -180,8 +176,8 @@
 }
 /** 进入忘记按钮*/
 - (void)forgetAction{
-//    ReplacePassWordViewController *replace = [[ReplacePassWordViewController alloc] init];
-//    [self.navigationController pushViewController:replace animated:YES];
+    WSDForgetPassWordViewController *replace = [[WSDForgetPassWordViewController alloc] init];
+    [self.navigationController pushViewController:replace animated:YES];
 }
 
 /** 点击登录按钮*/
@@ -298,15 +294,6 @@
         _passwordTfView.backgroundColor = GLOBALCOLOR;
     }
     return _passwordTfView;
-}
-
-
-- (UIView *)secondLineView{
-    if (!_secondLineView) {
-        _secondLineView = [[UIView alloc] init];
-        _secondLineView.backgroundColor = GRAYCOLOR;
-    }
-    return _secondLineView;
 }
 
 - (UIButton *)loginBtn{

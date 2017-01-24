@@ -99,7 +99,7 @@
 
 - (UIScrollView *)contentView{
     if (!_contentView) {
-        _contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NaviBar_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT- NaviBar_HEIGHT)];
+        _contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT- NaviBar_HEIGHT)];
         _contentView.backgroundColor = BACKGROUNDCOLOR;
         _contentView.showsVerticalScrollIndicator = NO;
         _contentView.showsHorizontalScrollIndicator = NO;
@@ -187,7 +187,7 @@
         //实际居中的view
         UILabel *center_ve = [[UILabel alloc]init];
         center_ve.font = FONT(17);
-        center_ve.textColor = BLACKTEXTCOLOR;
+        center_ve.textColor = WHITECOLOR;
         center_ve.text = weakSelf.name;
         center_ve.textAlignment = NSTextAlignmentCenter;
         //设置一个基于window居中的坐标
