@@ -31,6 +31,9 @@
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBarItem;
     
+    //设置nav的主题颜色
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:GLOBALCOLOR] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)didReceiveMemoryWarning {

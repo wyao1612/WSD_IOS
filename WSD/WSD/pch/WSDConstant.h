@@ -21,16 +21,16 @@
 /*
  弱引用
  */
-#define GOLFWeakObj(type) __weak typeof(type) weak##type = type;
+#define WSDWeakObj(type) __weak typeof(type) weak##type = type;
 /*
  内部版本号
  */
-#define GOLF_VERSION  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define WSD_VERSION  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 /*
  发布版本号
  */
-#define GOLF_VERSIONString  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define WSD_VERSIONString  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 /**
  日志打印
  */
@@ -57,11 +57,11 @@
 /*
  获取通知中心
  */
-#define GOLFNotificationCenter [NSNotificationCenter defaultCenter]
+#define WSDNotificationCenter [NSNotificationCenter defaultCenter]
 /* 
  获取缓存
  */
-#define GOLFUserDefault [NSUserDefaults standardUserDefaults]
+#define  WSDUserDefault [NSUserDefaults standardUserDefaults]
 /*
  读取图片 
  */
@@ -113,7 +113,7 @@
 #define SHENTEXTCOLOR RGBColor(102, 102, 102)//深色/666666
 #define LIGHTTEXTCOLOR RGBColor(153, 153, 153)//灰色///999999
 #define GRAYCOLOR RGBColor(230, 230, 230)//---浅色//e6e6e6、/切割线色
-#define GLOBALCOLOR [UIColor colorWithHex:0x2384ff]//蓝色 整体庚哥
+#define GLOBALCOLOR [UIColor colorWithHex:0x2384ff]//蓝色 整体
 #define OrangeCOLOR RGBColor(252,84,0)//橘色、价格数据颜色
 
 /** 

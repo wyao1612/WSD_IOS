@@ -8,6 +8,7 @@
 
 #import "WSDLoginViewController.h"
 #import "WSDForgetPassWordViewController.h"
+#import "WSDRegisterViewController.h"
 
 @interface WSDLoginViewController ()
 /** 左上返回*/
@@ -121,7 +122,7 @@
     _forgetBtn.sd_layout
     .topEqualToView(_registerLabel)
     .rightSpaceToView(self.view,36)
-    .widthIs(65)
+    .widthIs(85)
     .heightIs(15);
     
 }
@@ -176,10 +177,14 @@
 }
 /** 进入忘记按钮*/
 - (void)forgetAction{
-    WSDForgetPassWordViewController *replace = [[WSDForgetPassWordViewController alloc] init];
-    [self.navigationController pushViewController:replace animated:YES];
+    WSDForgetPassWordViewController *replaceVC = [[WSDForgetPassWordViewController alloc] init];
+    [self.navigationController pushViewController:replaceVC animated:YES];
 }
-
+/** 进入注册按钮*/
+- (void)RegisterAction{
+     WSDRegisterViewController *RegisterVC = [[WSDRegisterViewController alloc] init];
+    [self.navigationController pushViewController:RegisterVC animated:YES];
+}
 /** 点击登录按钮*/
 - (void)loginAction{
     
@@ -189,7 +194,7 @@
         return ;
     }
     
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [SVProgressHUD showWithStatus:@"正在登录中"];
     
      [ShareBusinessManager.loginManager postLoginWithParameters:@{@"deviceType":@1, @"password":_passwordTf.text, @"userName":_phoneTf.text} success:^(id responObject) {
@@ -270,7 +275,7 @@
     if (!_phoneTf) {
         _phoneTf = [[UITextField alloc] init];
         _phoneTf.placeholder = @"请输入手机号码";
-        _phoneTf.textColor = LIGHTTEXTCOLOR;
+        _phoneTf.textColor = SHENTEXTCOLOR;
         _phoneTf.font = FONT(16);
         _phoneTf.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
@@ -332,8 +337,8 @@
     if (!_forgetBtn) {
         _forgetBtn = [[UIButton alloc] init];
         [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
-        [_forgetBtn setTitleColor:GLOBALCOLOR forState:UIControlStateNormal];
-        _forgetBtn.titleLabel.font = FONT(12);
+        [_forgetBtn setTitleColor:LIGHTTEXTCOLOR forState:UIControlStateNormal];
+        _forgetBtn.titleLabel.font = FONT(15);
         [_forgetBtn addTarget:self action:@selector(forgetAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _forgetBtn;
@@ -344,8 +349,8 @@
         _registerBtn = [[UIButton alloc] init];
         [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
         [_registerBtn setTitleColor:GLOBALCOLOR forState:UIControlStateNormal];
-        _registerBtn.titleLabel.font = FONT(14);
-        [_registerBtn addTarget:self action:@selector(forgetAction) forControlEvents:UIControlEventTouchUpInside];
+        _registerBtn.titleLabel.font = FONT(15);
+        [_registerBtn addTarget:self action:@selector(RegisterAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _registerBtn;
 }

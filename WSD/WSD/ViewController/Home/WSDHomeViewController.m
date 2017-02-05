@@ -78,7 +78,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:GLOBALCOLOR] forBarMetrics:UIBarMetricsDefault];
     [self setNav];
 }
--(void)viewWillDisappear:(BOOL)animated{
+-(void) viewDidDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:WHITECOLOR] forBarMetrics:UIBarMetricsDefault];
 }

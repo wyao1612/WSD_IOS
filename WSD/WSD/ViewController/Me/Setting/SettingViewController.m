@@ -97,7 +97,7 @@
         //清空缓存
         [[SDImageCache sharedImageCache] clearDisk];//清除图片缓存
         [SVProgressHUD showWithStatus:@"正在清除"];
-        GOLFWeakObj(self);
+        WSDWeakObj(self);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SVProgressHUD showSuccessWithStatus:@"清除成功"];
             [weakself.tableView reloadData];
@@ -153,9 +153,9 @@
         NSString * currentVolum = [NSString stringWithFormat:@"%@",[self fileSizeWithInterge:intg]];
         cell.detailTextLabel.text = currentVolum;
     }else if(indexPath.row == 1){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"V %@", GOLF_VERSION];//当前使用内部版本号
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"V %@", WSD_VERSION];//当前使用内部版本号
     }else if (indexPath.row == 4){
-        cell.detailTextLabel.text = [GOLFUserDefault objectForKey:@"currentAPI"];
+        cell.detailTextLabel.text = [WSDUserDefault objectForKey:@"currentAPI"];
     }
 //        }
 //            break;

@@ -1,34 +1,35 @@
 //
-//  WSDForgetPassWordViewController.m
+//  WSDRegisterViewController.m
 //  WSD
 //
-//  Created by wyao on 2017/1/
+//  Created by wyao on 2017/2/4.
 //  Copyright © 2017年 Tsou. All rights reserved.
 //
 
-#import "WSDForgetPassWordViewController.h"
-#import "WSDResetPassWordViewController.h"
+#import "WSDRegisterViewController.h"
 #import "YW_TextField.h"
 
-@interface WSDForgetPassWordViewController ()
+@interface WSDRegisterViewController ()
 /** 电话输入框*/
 @property (nonatomic, strong) YW_TextField *phoneTf;
 /** 验证码输入框*/
 @property (nonatomic, strong) YW_TextField *verifyCodeTf;
 /** 发送验证码按钮*/
 @property (nonatomic, strong) JKCountDownButton *sendTestBtn;
+/** 密码输入框*/
+@property (nonatomic, strong) YW_TextField *passwordTf;
 /** 注册按钮*/
-@property (nonatomic, strong) UIButton *nextBtn;
+@property (nonatomic, strong) UIButton *RegisterBtn;
 @end
 
-@implementation WSDForgetPassWordViewController
+@implementation WSDRegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.name = @"重置密码";
+    self.name = @"注册";
     self.isAutoBack = NO;
-    [self.view sd_addSubviews:@[self.phoneTf, self.verifyCodeTf, self.sendTestBtn, self.nextBtn]];
+    [self.view sd_addSubviews:@[self.phoneTf, self.verifyCodeTf, self.sendTestBtn, self.passwordTf, self.RegisterBtn]];
     
     //布局
     self.phoneTf.sd_layout
@@ -37,7 +38,7 @@
     .rightSpaceToView(self.view,10)
     .heightIs(45);
     
-    
+
     self.sendTestBtn.sd_layout
     .topSpaceToView(self.phoneTf,15)
     .rightSpaceToView(self.view,10)
@@ -50,12 +51,18 @@
     .rightSpaceToView(self.sendTestBtn,6)
     .heightIs(45);
     
-    self.nextBtn.sd_layout
-    .topSpaceToView(self.verifyCodeTf,40)
+    self.passwordTf.sd_layout
+    .topSpaceToView(self.verifyCodeTf,15)
+    .leftSpaceToView(self.view,10)
+    .rightSpaceToView(self.view,10)
+    .heightIs(45);
+    
+    self.RegisterBtn.sd_layout
+    .topSpaceToView(self.passwordTf,40)
     .leftSpaceToView(self.view,43)
     .rightSpaceToView(self.view,43)
     .heightIs(48);
-    
+
 }
 
 /** 发送验证码*/
@@ -77,27 +84,34 @@
                                                              [SVProgressHUD showErrorWithStatus:errorMsg];
                                                          }];
 }
-/** 点击下一步按钮*/
+/** 点击注册按钮*/
 - (void)loginAction{
     
     [self.view endEditing:YES];
-    /*
     if (![self isFitLoginAccess]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确手机号码"];
-        return ;
-    }
-    if (!_verifyCodeTf.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+        [SVProgressHUD showErrorWithStatus:@"请输入正确手机号码或输入密码"];
         return ;
     }
     
     WSDWeakObj(self);
-    //点击下一步操作
-    [SVProgressHUD showWithStatus:@"验证手机号"];
-    */
-    //操作
-    WSDResetPassWordViewController *resetVc = [[WSDResetPassWordViewController alloc] init];
-    [self.navigationController pushViewController:resetVc animated:YES];
+    //注册操作
+    if (!_passwordTf.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        return;
+    }
+        [SVProgressHUD showWithStatus:@"正在注册中"];
+        [ShareBusinessManager.loginManager postRegisterWithParameters:@{@"password":_passwordTf.text,
+                                                                        @"regCode":_verifyCodeTf.text,
+                                                                        @"userName":_phoneTf.text}
+                                                              success:^(id responObject) {
+                                                                  //注册成功;
+                                                                  [SVProgressHUD showSuccessWithStatus:@"注册成功,正在登录中"];
+                                                                  [weakself.navigationController popViewControllerAnimated:YES];
+                                                              }
+                                                              failure:^(NSInteger errCode, NSString *errorMsg) {
+                                                                  [SVProgressHUD showErrorWithStatus:errorMsg];
+                                                              }];
+    
     
 }
 
@@ -112,6 +126,9 @@
         return NO;
     }
     if (![_phoneTf.text validateMobile]) {
+        return NO;
+    }
+    if (!_passwordTf.text.length) {
         return NO;
     }
     return YES;
@@ -136,6 +153,17 @@
     return _phoneTf;
 }
 
+- (YW_TextField *)passwordTf{
+    if (!_passwordTf) {
+        _passwordTf = [[YW_TextField alloc] init];
+        _passwordTf.placeholder = @"请输入密码";
+        _passwordTf.textColor = SHENTEXTCOLOR;
+        _passwordTf.font = FONT(16);
+        [_passwordTf setTextFiledLeftImageName:@"bottom-study"];
+        _passwordTf.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }
+    return _passwordTf;
+}
 
 - (YW_TextField *)verifyCodeTf{
     if (!_verifyCodeTf) {
@@ -173,14 +201,14 @@
     return _sendTestBtn;
 }
 
-- (UIButton *)nextBtn{
-    if (!_nextBtn) {
-        _nextBtn = [[UIButton alloc] init];
-        [_nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-        _nextBtn.backgroundColor = GLOBALCOLOR;
-        [_nextBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)RegisterBtn{
+    if (!_RegisterBtn) {
+        _RegisterBtn = [[UIButton alloc] init];
+        [_RegisterBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+        _RegisterBtn.backgroundColor = GLOBALCOLOR;
+        [_RegisterBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _nextBtn;
+    return _RegisterBtn;
 }
 
 @end

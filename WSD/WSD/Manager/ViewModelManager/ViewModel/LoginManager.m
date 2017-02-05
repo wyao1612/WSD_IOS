@@ -28,14 +28,14 @@
 
 
 - (void)postLoginWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postLoginWithParameters:parameters success:^(id responObject) {
         if ([responObject[@"status"] isEqualToNumber:@1]) {
             //
             NSDictionary *data = responObject[@"data"];
 //            [[UserModel sharedUserModel] mj_setKeyValues:data];
 //            [[UserModel sharedUserModel] setIsLogin:YES];
-            [GOLFUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
+            [WSDUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
             responSuccess(responObject[@"resParam"]);
         }else{
 //            [[UserModel sharedUserModel] setIsLogin:NO];
@@ -50,7 +50,7 @@
 
 
 - (void)postRegisterWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postRegisterWithParameters:parameters
                                    success:^(id responObject) {
                                        if ([responObject[@"status"] isEqualToNumber:@1]) {
@@ -66,7 +66,7 @@
 }
 
 - (void)postRegCodeWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postRegCodeWithParameters:parameters
                                   success:^(id responObject) {
                                       if ([responObject[@"status"] isEqualToNumber:@1]) {
@@ -81,7 +81,7 @@
 }
 
 - (void)postEditUserInfoWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postEditUserInfoWithParameters:parameters
                                        success:^(id responObject) {
                                            if ([responObject[@"status"] isEqualToNumber:@1]) {
@@ -96,7 +96,7 @@
 }
 
 - (void)postTieUserInfoWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postTieUserInfoWithParameters:parameters
                                       success:^(id responObject) {
                                           if ([responObject[@"status"] isEqualToNumber:@1]) {
@@ -110,14 +110,14 @@
 }
 
 - (void)postLoginElseWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postLoginElseWithParameters:parameters
                                     success:^(id responObject) {
                                         if ([responObject[@"status"] isEqualToNumber:@1]) {
                                             NSDictionary *data = responObject[@"data"];
 //                                            [[UserModel sharedUserModel] mj_setKeyValues:data];
 //                                            [[UserModel sharedUserModel] setIsLogin:YES];
-                                            [GOLFUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
+                                            [WSDUserDefault setObject:data forKey:@"userInfo"];//缓存用户资料
                                             responSuccess(responObject[@"resParam"]);
                                         }else{
                                             responFailure([responObject[@"status"] integerValue], responObject[@"showMessage"]);
@@ -128,7 +128,7 @@
 }
 
 - (void)postReplacePasswordWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postReplacePasswordWithParameters:parameters
                                           success:^(id responObject) {
                                               if ([responObject[@"status"] isEqualToNumber:@1]) {
@@ -143,7 +143,7 @@
 }
 
 - (void)postUserBanlanceScoreWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor postUserBanlanceScoreWithParameters:parameters
                                             success:^(id responObject) {
                                                 if ([responObject[@"status"] isEqualToNumber:@1]) {

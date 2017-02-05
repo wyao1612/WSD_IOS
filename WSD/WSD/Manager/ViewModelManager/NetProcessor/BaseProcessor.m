@@ -15,7 +15,7 @@
                                                      success:(void (^)(id responseObject))success
                                                      failure:(void (^)(NSError *error))failure
 {
-    [self afHTTPSessionManagerToServerInteractionWithUrlString:[NSString stringWithFormat:@"%@%@",[GOLFUserDefault objectForKey:@"currentAPI"],interface]
+    [self afHTTPSessionManagerToServerInteractionWithUrlString:[NSString stringWithFormat:@"%@%@",[WSDUserDefault objectForKey:@"currentAPI"],interface]
                                                      parameter:parameters
                                                        success:success
                                                        failure:failure];

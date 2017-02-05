@@ -32,7 +32,7 @@
 //MARK: - 首页
 
 - (void)getIndexInfoWithParameters:(NSDictionary *)parameters success:(OBJBlock)responSuccess failure:(ERRORCODEBlock)responFailure{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     [_processor getIndexInfoWithParameters:parameters success:^(id responObject) {
         NSLog(@"%@",responObject);
         HomeInfoModel *model = [HomeInfoModel mj_objectWithKeyValues:responObject];

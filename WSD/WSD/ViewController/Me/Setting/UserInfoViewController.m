@@ -107,7 +107,7 @@
 
 /** 点击方法*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    GOLFWeakObj(self);
+    WSDWeakObj(self);
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:

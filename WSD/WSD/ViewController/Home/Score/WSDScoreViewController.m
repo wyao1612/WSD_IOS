@@ -25,7 +25,7 @@ UITableViewDataSource
 
 -(UITableView *)tableview{
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
         _tableview.delegate = self;
         _tableview.dataSource = self;
         _tableview.backgroundColor = [UIColor whiteColor];
@@ -58,6 +58,7 @@ UITableViewDataSource
     [self.view addSubview:self.tableview];
     [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor colorWithHex:0xf2f2f2]];
+
 
 }
 

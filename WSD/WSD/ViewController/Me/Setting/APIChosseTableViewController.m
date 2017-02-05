@@ -29,7 +29,7 @@
     self.name = @"选择API";
     self.isAutoBack = NO;
     [self.view addSubview:self.tableView];
-    _currentAPI = [GOLFUserDefault objectForKey:@"currentAPI"];
+    _currentAPI = [WSDUserDefault objectForKey:@"currentAPI"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +50,7 @@
     if ([_currentAPI isEqualToString:_data[indexPath.row]]) {
         return;
     }else{
-        [GOLFUserDefault setObject:_data[indexPath.row] forKey:@"currentAPI"];
+        [WSDUserDefault setObject:_data[indexPath.row] forKey:@"currentAPI"];
         [SVProgressHUD showInfoWithStatus:@"程序即将退出，请重新进入"];
         [self performSelector:@selector(exitAPP) withObject:nil afterDelay:2];
     }

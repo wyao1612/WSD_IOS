@@ -59,7 +59,7 @@ UITableViewDataSource
 }
 
 - (void)dealloc{
-    [GOLFNotificationCenter removeObserver:self];
+    [WSDNotificationCenter removeObserver:self];
 }
 
 #pragma mark ----------------自动布局

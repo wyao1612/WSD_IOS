@@ -33,8 +33,8 @@
 /** 设置程序API*/
 - (void)settingAPI{
     //初始化服务器，默认为正式服务器
-    if (![GOLFUserDefault objectForKey:@"currentAPI"]) {
-        [GOLFUserDefault setObject:HostAPI forKey:@"currentAPI"];
+    if (![WSDUserDefault objectForKey:@"currentAPI"]) {
+        [WSDUserDefault setObject:HostAPI forKey:@"currentAPI"];
     }
 }
 /** 读取用户资料*/
