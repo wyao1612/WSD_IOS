@@ -7,6 +7,7 @@
 //
 
 #import "WSDRegisterViewController.h"
+#import "WSDRegisterSuccessViewController.h"
 #import "YW_TextField.h"
 
 @interface WSDRegisterViewController ()
@@ -88,7 +89,10 @@
 - (void)loginAction{
     
     [self.view endEditing:YES];
-    if (![self isFitLoginAccess]) {
+    WSDRegisterSuccessViewController *successVc = [[WSDRegisterSuccessViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:successVc];
+    [self presentViewController:navi animated:YES completion:nil];
+  /*  if (![self isFitLoginAccess]) {
         [SVProgressHUD showErrorWithStatus:@"请输入正确手机号码或输入密码"];
         return ;
     }
@@ -111,7 +115,7 @@
                                                               failure:^(NSInteger errCode, NSString *errorMsg) {
                                                                   [SVProgressHUD showErrorWithStatus:errorMsg];
                                                               }];
-    
+    */
     
 }
 

@@ -75,6 +75,7 @@
 		12E9DD791E372CE3008A1FC9 /* WSDForgetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E9DD781E372CE3008A1FC9 /* WSDForgetPassWordViewController.m */; };
 		12F19FA71E46D7D8007FABEB /* YW_TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FA61E46D7D8007FABEB /* YW_TextField.m */; };
 		12F19FAA1E470E7F007FABEB /* WSDResetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FA91E470E7F007FABEB /* WSDResetPassWordViewController.m */; };
+		12F19FAD1E47220D007FABEB /* WSDRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FAC1E47220D007FABEB /* WSDRegisterSuccessViewController.m */; };
 		25E05DFA51FB735EAC56F388 /* libPods-WSD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7567F8B0699E99D733F647 /* libPods-WSD.a */; };
 		53AF43AAD7CA284C80E94B72 /* libPods-WSDTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */; };
 /* End PBXBuildFile section */
@@ -235,6 +236,8 @@
 		12F19FA61E46D7D8007FABEB /* YW_TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YW_TextField.m; sourceTree = "<group>"; };
 		12F19FA81E470E7F007FABEB /* WSDResetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDResetPassWordViewController.h; sourceTree = "<group>"; };
 		12F19FA91E470E7F007FABEB /* WSDResetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDResetPassWordViewController.m; sourceTree = "<group>"; };
+		12F19FAB1E47220D007FABEB /* WSDRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDRegisterSuccessViewController.h; sourceTree = "<group>"; };
+		12F19FAC1E47220D007FABEB /* WSDRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDRegisterSuccessViewController.m; sourceTree = "<group>"; };
 		50C4AAE8BFCF065F1DA5640F /* Pods-WSD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSD/Pods-WSD.release.xcconfig"; sourceTree = "<group>"; };
 		69C84A764BA449CBAC58795C /* Pods-WSDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSDTests/Pods-WSDTests.release.xcconfig"; sourceTree = "<group>"; };
 		863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSDTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -434,6 +437,8 @@
 				12F19FA91E470E7F007FABEB /* WSDResetPassWordViewController.m */,
 				127390F71E45B68000F6C491 /* WSDRegisterViewController.h */,
 				127390F81E45B68000F6C491 /* WSDRegisterViewController.m */,
+				12F19FAB1E47220D007FABEB /* WSDRegisterSuccessViewController.h */,
+				12F19FAC1E47220D007FABEB /* WSDRegisterSuccessViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1020,6 +1025,7 @@
 				12C84FCA1E27792B009A9882 /* UINavigationBar+Awesome.m in Sources */,
 				1249A3E51E35D9EB004CF85E /* MenuModel.m in Sources */,
 				12C84FA41E261001009A9882 /* STL_BaseViewController.m in Sources */,
+				12F19FAD1E47220D007FABEB /* WSDRegisterSuccessViewController.m in Sources */,
 				12C84FB41E2629B3009A9882 /* APIChosseTableViewController.m in Sources */,
 				122661C21E1BBBD50009F045 /* UIBarButtonItem+YB_Extension.m in Sources */,
 				12C84FC01E275D49009A9882 /* YW_SegmentSwitch.m in Sources */,
