@@ -36,6 +36,10 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //设置nav的主题颜色
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
+
     YW_SegmentSwitch *segmetView = [[YW_SegmentSwitch alloc] init];
     segmetView.frame = CGRectMake(0, 0, 200, 35);
     segmetView.backgroundColor = [UIColor whiteColor];
@@ -46,7 +50,7 @@ UITableViewDataSource
     segmetView.titles = @[@"成绩",@"评价"];
     segmetView.layer.borderWidth = 0.5;
     segmetView.layer.borderColor = [[UIColor blackColor] CGColor];
-    
+    segmetView.backgroundColor = [UIColor colorWithHex:0xf2f2f2];
     [self.navigationItem setTitleView:segmetView];
     
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] init];
@@ -54,18 +58,15 @@ UITableViewDataSource
     rightBarItem.tintColor = SHENTEXTCOLOR;
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
-    
     [self.view addSubview:self.tableview];
     [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor colorWithHex:0xf2f2f2]];
-
-
+    
 }
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar lt_reset];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //设置nav的主题颜色
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
 }
 
 

@@ -21,22 +21,9 @@
 #define iOS10 ([[UIDevice currentDevice].systemVersion intValue]>=10?YES:NO)
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    [self.navigationController.navigationBar.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        if (iOS10) {
-            //iOS10,改变了导航栏的私有接口为_UIBarBackground
-            if ([view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
-                
-                [view.subviews firstObject].hidden = YES;
-            }
-        }else{
-            //iOS10之前使用的是_UINavigationBarBackground
-            if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
-                
-                [view.subviews firstObject].hidden = YES;
-            }
-        }
-    }];
+    //设置nav的主题颜色
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:GLOBALCOLOR] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)pushViewController:(UIViewController*)viewController animated:(BOOL)animated

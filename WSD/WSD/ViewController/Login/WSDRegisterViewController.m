@@ -90,8 +90,8 @@
     
     [self.view endEditing:YES];
     WSDRegisterSuccessViewController *successVc = [[WSDRegisterSuccessViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:successVc];
-    [self presentViewController:navi animated:YES completion:nil];
+//    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:successVc];
+    [self.navigationController pushViewController:successVc animated:YES];
   /*  if (![self isFitLoginAccess]) {
         [SVProgressHUD showErrorWithStatus:@"请输入正确手机号码或输入密码"];
         return ;
