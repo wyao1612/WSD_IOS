@@ -36,10 +36,7 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //设置nav的主题颜色
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
-
+    
     YW_SegmentSwitch *segmetView = [[YW_SegmentSwitch alloc] init];
     segmetView.frame = CGRectMake(0, 0, 200, 35);
     segmetView.backgroundColor = [UIColor whiteColor];
@@ -66,7 +63,7 @@ UITableViewDataSource
     [super viewWillAppear:animated];
     //设置nav的主题颜色
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xf2f2f2]] forBarMetrics:UIBarMetricsDefault];
 }
 
 
