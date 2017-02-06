@@ -63,6 +63,7 @@ static NSString * const ID = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // 添加数据源
     UserModel  *acc = _accountSource[indexPath.row];
     cell.accountModel = acc;
@@ -82,6 +83,7 @@ static NSString * const ID = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"-------->选中第%ld行",indexPath.row);
+
     // 判断记录的位置是否和上一次相同,(是否是左侧同一个cell点了两下)
     if (self.SelectedIndexPath == indexPath) {
         return;

@@ -69,6 +69,14 @@
 - (void)leftBackAction{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+/** 立即绑定*/
+-(void)boundAction{
+    [SVProgressHUD showSuccessWithStatus:@"立即绑定"];
+}
+/** 暂不绑定*/
+-(void)NOBoundLbTap{
+    [SVProgressHUD showSuccessWithStatus:@"暂不绑定"];
+}
 #pragma mark - 懒加载
 - (UIImageView *)logoIv{
     if (!_logoIv) {
@@ -115,6 +123,9 @@
         _NOBoundLb.font = FONT(16);
         _NOBoundLb.textColor = LIGHTTEXTCOLOR;
         _NOBoundLb.text = @"暂不绑定";
+        _NOBoundLb.userInteractionEnabled = YES;
+        UITapGestureRecognizer *NOBoundLbTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(NOBoundLbTap)];
+        [_NOBoundLb addGestureRecognizer:NOBoundLbTap];
     }
     return _NOBoundLb;
 }

@@ -17,7 +17,7 @@
 #define SectionViewH    48
 
 #define inputW 230 // 输入框宽度
-#define inputH 35  // 输入框高度
+#define inputH 60  // 输入框高度
 
 @interface WSDHomeViewController ()
 <
@@ -96,10 +96,8 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 
 
 - (void)setupUI{
-    
     self.view.backgroundColor = BACKGROUNDCOLOR;
     [self.view addSubview:self.tableView];
-
 }
 
 #pragma mark - titleView搜索框点击
@@ -107,7 +105,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
     [SVProgressHUD showSuccessWithStatus:@"点击搜索"];
 }
 #pragma mark - 头像按钮点击
-- (void)listBtnClick{
+- (void)iconImageViewTap:(UITapGestureRecognizer *)sender{
   [self openAccountList];
 }
 
@@ -116,7 +114,6 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 - (void)setPopMenu {
     // 从工程plist文件读取账号模型数据
     _dataSource = [UserModel mj_objectArrayWithFilename:@"account.plist"];
-
     // 设置账号弹出菜单(最后添加显示在顶层)
     self.accountList.accountSource = _dataSource;
     // 初始化frame
@@ -138,7 +135,7 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         self.accountList.view.hidden = NO;
         [self.view addSubview:self.accountList.view];
         // 设置内容的高度
-        CGFloat height = self.dataSource.count * 60;
+        CGFloat height = inputH * (_dataSource.count +1);
         self.accountList.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, 0);
         [UIView animateWithDuration:0.3 animations:^{
             CGRect frame = self.accountList.view.frame;
@@ -161,11 +158,11 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
 - (void)PopListTableViewUpdateListHeight {
     CGFloat listH;
     // 数据大于3个现实3个半的高度，否则显示完整高度
-    if (_dataSource.count > 3) {
-        listH = inputH * 3.5;
-    }else{
-        listH = inputH * _dataSource.count;
-    }
+//    if (_dataSource.count > 3) {
+//        listH = inputH * 3.5;
+//    }else{
+        listH = inputH * (_dataSource.count +1);
+//    }
     _listFrame = CGRectMake(0, 64, SCREEN_WIDTH, listH);
 }
 
@@ -400,6 +397,8 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         _iconImageView = [[UIImageView alloc] init];
         _iconImageView.image = [Placeholder_small circleImage];
         _iconImageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *iconImageViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconImageViewTap:)];
+        [_iconImageView addGestureRecognizer:iconImageViewTap];
     }
     return _iconImageView;
 }
@@ -409,8 +408,8 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         _listBtn = [[UIButton alloc] init];
         [_listBtn setBackgroundImage:[UIImage imageNamed:@"classify1"] forState:UIControlStateNormal];
         [_listBtn setBackgroundImage:[UIImage imageNamed:@"classify1"] forState:UIControlStateSelected];
-        _listBtn.userInteractionEnabled = YES;
-        [_listBtn addTarget:self action:@selector(listBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//        _listBtn.userInteractionEnabled = YES;
+//        [_listBtn addTarget:self action:@selector(listBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _listBtn;
 }
@@ -420,8 +419,8 @@ static  NSString *const kWSDHomeTableViewCell = @"kWSDHomeTableViewCell";
         _searchImageView = [[UIImageView alloc] init];
         _searchImageView.image = [UIImage imageNamed:@"test"];
         _searchImageView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *iconImageViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchImageViewTap:)];
-        [_searchImageView addGestureRecognizer:iconImageViewTap];
+        UITapGestureRecognizer *searchImageViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchImageViewTap:)];
+        [_searchImageView addGestureRecognizer:searchImageViewTap];
     }
     return _searchImageView;
 }

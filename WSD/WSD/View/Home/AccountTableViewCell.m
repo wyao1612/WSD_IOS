@@ -45,21 +45,22 @@
     [self.contentView addSubview:self.selectView];
     
     self.avatar.sd_layout
-    .topSpaceToView(self.contentView,8)
-    .leftSpaceToView(self.contentView,12)
+    .topSpaceToView(self.contentView,10)
+    .leftSpaceToView(self.contentView,10)
     .widthIs(35)
     .heightIs(35);
+    self.avatar.sd_cornerRadius = @17;
     
     self.nameLabel.sd_layout
-    .topSpaceToView(self.contentView,8)
-    .leftSpaceToView(self.avatar,8)
+    .centerYEqualToView(self.avatar)
+    .leftSpaceToView(self.avatar,14)
     .autoHeightRatio(0);
     [self.nameLabel setMaxNumberOfLinesToShow:1];
     [self.nameLabel setSingleLineAutoResizeWithMaxWidth:100];
     
     self.IdLabel.sd_layout
-    .topSpaceToView(self.nameLabel,8)
-    .leftSpaceToView(self.avatar,8)
+    .centerYEqualToView(self.nameLabel)
+    .leftSpaceToView(self.nameLabel,3)
     .autoHeightRatio(0);
     [self.IdLabel setMaxNumberOfLinesToShow:1];
     [self.IdLabel setSingleLineAutoResizeWithMaxWidth:100];
@@ -84,7 +85,7 @@
 -(UIImageView *)avatar{
     if (!_avatar) {
         _avatar = [[UIImageView alloc] init];
-        _avatar.layer.cornerRadius = (inputH-10)/2;
+        _avatar.backgroundColor = GLOBALCOLOR;
     }
     return _avatar;
 }
