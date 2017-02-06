@@ -21,6 +21,8 @@ UITableViewDataSource
 @property (nonatomic, strong) UILabel *userNameLb;
 /** 我的社区按钮*/
 @property (nonatomic, strong) UIButton *myHomeBtn;
+/** ID*/
+@property (nonatomic, strong) UILabel *IDLabel;
 
 /** 列表*/
 @property (nonatomic, strong) UITableView *tableView;
@@ -38,10 +40,9 @@ UITableViewDataSource
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contentView.backgroundColor = WHITECOLOR;
+    self.contentView.backgroundColor = BACKGROUNDCOLOR;
     [self.contentView addSubview:self.topBackIv];//添加头部
     self.name = @"个人中心";
-//    self.isAutoBack = NO;
     self.showBack = NO;
     self.rightIm_0 = IMAGE(@"setting");
     [self.contentView addSubview:self.tableView];//添加列表
@@ -54,7 +55,8 @@ UITableViewDataSource
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NaviBar_HEIGHT - 49);
+    self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.contentView.scrollEnabled = YES;
     [self autoLayoutHeadIv];
     [self updateUI];//每次进入页面都会刷新数据
 }
@@ -68,16 +70,16 @@ UITableViewDataSource
 - (void)autoLayoutHeadIv{
     
     _topBackIv.sd_layout
-    .topSpaceToView(self.contentView, 0)
+    .topSpaceToView(self.contentView, 20)
     .rightSpaceToView(self.contentView, 0)
     .leftSpaceToView(self.contentView, 0)
-    .heightIs(125);
+    .heightIs(120);
     
     _headIv.sd_layout
     .topSpaceToView(_topBackIv, 20)
     .leftSpaceToView(_topBackIv, 10)
     .heightIs(70)
-    .widthEqualToHeight();
+    .widthIs(70);
     
     _userNameLb.sd_layout
     .leftSpaceToView(_headIv, 15)
@@ -85,7 +87,12 @@ UITableViewDataSource
     .heightIs(16);
     [_userNameLb setSingleLineAutoResizeWithMaxWidth:SCREEN_WIDTH];
     
-
+    _IDLabel.sd_layout
+    .topSpaceToView(_userNameLb,18)
+    .leftSpaceToView(_headIv,15)
+    .autoHeightRatio(0);
+    [_IDLabel setSingleLineAutoResizeWithMaxWidth:200];
+    
     _myHomeBtn.sd_layout
     .centerYEqualToView(_topBackIv)
     .rightSpaceToView(_topBackIv, 20)
@@ -185,7 +192,7 @@ UITableViewDataSource
 }
 
 
-#pragma mark ----------------tableView代理
+#pragma mark - tableView代理
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -234,17 +241,18 @@ UITableViewDataSource
     return cell;
 }
 
-#pragma mark ----------------实例
+#pragma mark - 实例
 
 - (UIImageView *)topBackIv{
     if (!_topBackIv) {
         _topBackIv = [[UIImageView alloc] init];
-        _topBackIv.backgroundColor = GLOBALCOLOR;
+        _topBackIv.backgroundColor = WHITECOLOR;
         _topBackIv.image = IMAGE(@"classify91");
         _topBackIv.userInteractionEnabled = YES;
         [_topBackIv addSubview:self.headIv];
         [_topBackIv addSubview:self.userNameLb];
         [_topBackIv addSubview:self.myHomeBtn];
+        [_topBackIv addSubview:self.IDLabel];
     }
     return _topBackIv;
     
@@ -254,9 +262,9 @@ UITableViewDataSource
 - (UIImageView *)headIv{
     if (!_headIv) {
         _headIv = [[UIImageView alloc] init];
-        _headIv.layer.borderColor = GLOBALCOLOR.CGColor;
-        _headIv.layer.borderWidth = 2;
-        _headIv.layer.cornerRadius = 32.5;
+        _headIv.layer.borderColor = WHITECOLOR.CGColor;
+//        _headIv.layer.borderWidth = 1.0f;
+        _headIv.layer.cornerRadius = 35.0f;
         _headIv.image = Placeholder_small;
         _headIv.userInteractionEnabled = YES;
         _headIv.clipsToBounds = YES;
@@ -269,23 +277,27 @@ UITableViewDataSource
 - (UILabel *)userNameLb{
     if (!_userNameLb) {
         _userNameLb= [[UILabel alloc] init];
-        _userNameLb.font = FONT(16);
-        _userNameLb.textColor = BLACKCOLOR;
+        _userNameLb.font = FONT(15);
+        _userNameLb.textColor = SHENTEXTCOLOR;
         _userNameLb.text = @"请登录";
     }
     return _userNameLb;
+}
+- (UILabel *)IDLabel{
+    if (!_IDLabel) {
+        _IDLabel= [[UILabel alloc] init];
+        _IDLabel.font = FONT(12);
+        _IDLabel.textColor = LIGHTTEXTCOLOR;
+        _IDLabel.text = @"ID: 989898";
+    }
+    return _IDLabel;
 }
 
 
 - (UIButton *)myHomeBtn{
     if (!_myHomeBtn) {
         _myHomeBtn = [[UIButton alloc] init];
-        _myHomeBtn.titleLabel.font = FONT(14);
-        [_myHomeBtn setTitle:@"个人资料" forState:UIControlStateNormal];
-        [_myHomeBtn setTitleColor:BLACKCOLOR forState:UIControlStateNormal];
         [_myHomeBtn setImage:IMAGE(@"userInfo") forState:UIControlStateNormal];
-        [_myHomeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
-        [_myHomeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 15)];
         [_myHomeBtn addTarget:self action:@selector(topBackIvAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _myHomeBtn;
@@ -296,7 +308,7 @@ UITableViewDataSource
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.frame = CGRectMake(0, 125, SCREEN_WIDTH, SCREEN_HEIGHT - 125 - 49);
+        _tableView.frame = CGRectMake(0, 160, SCREEN_WIDTH, SCREEN_HEIGHT - 125 - 49);
         _tableView.backgroundColor = BACKGROUNDCOLOR;
         _tableView.separatorColor = GRAYCOLOR;
         _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);

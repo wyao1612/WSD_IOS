@@ -76,6 +76,8 @@
 		12F19FA71E46D7D8007FABEB /* YW_TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FA61E46D7D8007FABEB /* YW_TextField.m */; };
 		12F19FAA1E470E7F007FABEB /* WSDResetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FA91E470E7F007FABEB /* WSDResetPassWordViewController.m */; };
 		12F19FAD1E47220D007FABEB /* WSDRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F19FAC1E47220D007FABEB /* WSDRegisterSuccessViewController.m */; };
+		12F19FB01E482873007FABEB /* MeList_0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F19FAE1E482873007FABEB /* MeList_0.plist */; };
+		12F19FB11E482873007FABEB /* MeList_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F19FAF1E482873007FABEB /* MeList_1.plist */; };
 		25E05DFA51FB735EAC56F388 /* libPods-WSD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7567F8B0699E99D733F647 /* libPods-WSD.a */; };
 		53AF43AAD7CA284C80E94B72 /* libPods-WSDTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */; };
 /* End PBXBuildFile section */
@@ -238,6 +240,8 @@
 		12F19FA91E470E7F007FABEB /* WSDResetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDResetPassWordViewController.m; sourceTree = "<group>"; };
 		12F19FAB1E47220D007FABEB /* WSDRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDRegisterSuccessViewController.h; sourceTree = "<group>"; };
 		12F19FAC1E47220D007FABEB /* WSDRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDRegisterSuccessViewController.m; sourceTree = "<group>"; };
+		12F19FAE1E482873007FABEB /* MeList_0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList_0.plist; sourceTree = "<group>"; };
+		12F19FAF1E482873007FABEB /* MeList_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList_1.plist; sourceTree = "<group>"; };
 		50C4AAE8BFCF065F1DA5640F /* Pods-WSD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSD.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSD/Pods-WSD.release.xcconfig"; sourceTree = "<group>"; };
 		69C84A764BA449CBAC58795C /* Pods-WSDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSDTests/Pods-WSDTests.release.xcconfig"; sourceTree = "<group>"; };
 		863E5DA54DF1CDC8EEC3AB93 /* libPods-WSDTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSDTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -549,6 +553,8 @@
 				12C84FAB1E2629B3009A9882 /* Setting */,
 				12C84F881E261001009A9882 /* WSDMeViewController.h */,
 				12C84F891E261001009A9882 /* WSDMeViewController.m */,
+				12F19FAE1E482873007FABEB /* MeList_0.plist */,
+				12F19FAF1E482873007FABEB /* MeList_1.plist */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -811,6 +817,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1226616A1E1BAD4B0009F045 /* LaunchScreen.storyboard in Resources */,
+				12F19FB01E482873007FABEB /* MeList_0.plist in Resources */,
+				12F19FB11E482873007FABEB /* MeList_1.plist in Resources */,
 				12C84F991E261001009A9882 /* account.plist in Resources */,
 				122661671E1BAD4B0009F045 /* Assets.xcassets in Resources */,
 			);
