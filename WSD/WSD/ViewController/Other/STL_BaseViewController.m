@@ -52,22 +52,22 @@
     //添加侧滑
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
-    //删除Nav下面的黑线
-    [self.navigationController.navigationBar.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        if (iOS10) {
-            //iOS10,改变了导航栏的私有接口为_UIBarBackground
-            if ([view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
-                
-                [view.subviews firstObject].hidden = YES;
-            }
-        }else{
-            //iOS10之前使用的是_UINavigationBarBackground
-            if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
-                
-                [view.subviews firstObject].hidden = YES;
-            }
-        }
-    }];
+//    //删除Nav下面的黑线
+//    [self.navigationController.navigationBar.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+//        if (iOS10) {
+//            //iOS10,改变了导航栏的私有接口为_UIBarBackground
+//            if ([view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+//                
+//                [view.subviews firstObject].hidden = YES;
+//            }
+//        }else{
+//            //iOS10之前使用的是_UINavigationBarBackground
+//            if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
+//                
+//                [view.subviews firstObject].hidden = YES;
+//            }
+//        }
+//    }];
 }
 // 什么时候调用，每次触发手势之前都会询问下代理方法，是否触发
 // 作用：拦截手势触发
