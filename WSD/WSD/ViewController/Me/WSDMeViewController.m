@@ -41,6 +41,7 @@ UITableViewDataSource
     self.contentView.backgroundColor = WHITECOLOR;
     [self.contentView addSubview:self.topBackIv];//添加头部
     self.name = @"个人中心";
+//    self.isAutoBack = NO;
     self.showBack = NO;
     self.rightIm_0 = IMAGE(@"setting");
     [self.contentView addSubview:self.tableView];//添加列表
@@ -53,7 +54,7 @@ UITableViewDataSource
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    self.contentView.frame = CGRectMake(0, NaviBar_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NaviBar_HEIGHT - 49);
+    self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NaviBar_HEIGHT - 49);
     [self autoLayoutHeadIv];
     [self updateUI];//每次进入页面都会刷新数据
 }
