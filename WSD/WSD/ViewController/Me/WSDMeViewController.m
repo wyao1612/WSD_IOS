@@ -26,11 +26,12 @@ UITableViewDataSource
 
 /** 列表*/
 @property (nonatomic, strong) UITableView *tableView;
-/** 上半部数据*/
+/** 第一部数据*/
 @property (nonatomic, strong) NSArray *listData_0;
-/** 下半部数据*/
+/** 第二部数据*/
 @property (nonatomic, strong) NSArray *listData_1;
-
+/** 第三部数据*/
+@property (nonatomic, strong) NSArray *listData_2;
 
 
 
@@ -65,7 +66,7 @@ UITableViewDataSource
     [WSDNotificationCenter removeObserver:self];
 }
 
-#pragma mark ----------------自动布局
+#pragma mark - 自动布局
 
 - (void)autoLayoutHeadIv{
     
@@ -95,9 +96,9 @@ UITableViewDataSource
     
     _myHomeBtn.sd_layout
     .centerYEqualToView(_topBackIv)
-    .rightSpaceToView(_topBackIv, 20)
+    .rightSpaceToView(_topBackIv, 15)
     .heightIs(30)
-    .widthIs(70);
+    .widthIs(7);
     
 }
 
@@ -111,6 +112,8 @@ UITableViewDataSource
     _listData_0 = [[NSArray alloc] initWithContentsOfFile:listPath_0];
     NSString *listPath_1 = [[NSBundle mainBundle] pathForResource:@"MeList_1" ofType:@"plist"];
     _listData_1 = [[NSArray alloc] initWithContentsOfFile:listPath_1];
+    NSString *listPath_2 = [[NSBundle mainBundle] pathForResource:@"MeList_2" ofType:@"plist"];
+    _listData_2 = [[NSArray alloc] initWithContentsOfFile:listPath_2];
 
 }
 /** 刷新界面*/
@@ -149,35 +152,35 @@ UITableViewDataSource
         
         switch (indexPath.row) {
             case 0:
-            {//进入我的订单
+            {//进入我的课程表
               
             }
                 break;
             case 1:
-            {//进入我的钱包
+            {//进入我的订单
                 
             }
                 break;
             case 2:
-            {//进入我的积分
+            {//进入我的活动
 
             }
                 break;
             case 3:
-            {//进入我的荣誉
+            {//进入班级关注
 
             }
                 break;
-            case 4:
-            {//进入我的收藏
-
-            }
             default:
                 break;
         }
     }    
-    
-    
+    else if (indexPath.section == 1 && indexPath.row == 0) {
+        //进入帮助中心
+    }
+    else if (indexPath.section == 2 && indexPath.row == 0 ){
+        //进入关于我们
+    }
 }
 
 /** 点击头像视图*/
@@ -193,27 +196,25 @@ UITableViewDataSource
 
 
 #pragma mark - tableView代理
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return _listData_0.count;
+    }else if(section == 1){
+        return _listData_1.count;
     }
-    return _listData_1.count;
+    return _listData_2.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 45;
+    return 50;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 0.01;
-    }
-    return 10;
+    return 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -225,16 +226,17 @@ UITableViewDataSource
     cell.selectionStyle = UITableViewCellSelectionStyleNone;//消除选中样式
     cell.textLabel.font = FONT(14);//设置标题大小
     cell.textLabel.textColor = SHENTEXTCOLOR;//设置标题颜色
-    cell.accessoryView = [[UIImageView alloc] initWithImage:IMAGE(@"classify8")];//设置指示图
+    cell.accessoryView = [[UIImageView alloc] initWithImage:IMAGE(@"more")];//设置指示图
     cell.detailTextLabel.textColor = LIGHTTEXTCOLOR;//设置详请字体颜色
     cell.detailTextLabel.font = FONT(12);//设置详情字体大小
     
     NSDictionary *info;
     if (indexPath.section == 0) {
         info = _listData_0[indexPath.row];
-       
-    }else{
+    }else if(indexPath.section == 1){
         info = _listData_1[indexPath.row];
+    }else{
+       info = _listData_2[indexPath.row];
     }
     cell.textLabel.text = info[@"title"];
     cell.imageView.image = IMAGE(info[@"image"]);
@@ -297,7 +299,7 @@ UITableViewDataSource
 - (UIButton *)myHomeBtn{
     if (!_myHomeBtn) {
         _myHomeBtn = [[UIButton alloc] init];
-        [_myHomeBtn setImage:IMAGE(@"userInfo") forState:UIControlStateNormal];
+        [_myHomeBtn setImage:IMAGE(@"more") forState:UIControlStateNormal];
         [_myHomeBtn addTarget:self action:@selector(topBackIvAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _myHomeBtn;

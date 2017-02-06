@@ -4,27 +4,27 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>我的课程表</string>
+		<key>image</key>
+		<string>classify9</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>我的订单</string>
 		<key>image</key>
-		<string>classify99</string>
+		<string>classify9</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>我的钱包</string>
+		<string>我的活动</string>
 		<key>image</key>
-		<string>classify100</string>
+		<string>classify9</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>我的积分</string>
+		<string>班级关注</string>
 		<key>image</key>
-		<string>classify101</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>我的荣誉</string>
-		<key>image</key>
-		<string>classify146</string>
+		<string>classify9</string>
 	</dict>
 </array>
 </plist>
