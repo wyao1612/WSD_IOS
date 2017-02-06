@@ -25,6 +25,7 @@
 		122661C61E1BBBD50009F045 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661B81E1BBBD50009F045 /* UILabel+Category.m */; };
 		122661C71E1BBBD50009F045 /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661BA1E1BBBD50009F045 /* UIScrollView+UITouch.m */; };
 		122661CC1E1BBBDE0009F045 /* NSArray+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 122661CB1E1BBBDE0009F045 /* NSArray+Properties.m */; };
+		1248524F1E4846D0002EC668 /* MeList_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1248524E1E4846D0002EC668 /* MeList_2.plist */; };
 		1249A3D91E35CEC0004CF85E /* WSDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */; };
 		1249A3DD1E35D9E3004CF85E /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3DC1E35D9E3004CF85E /* JKCountDownButton.m */; };
 		1249A3E51E35D9EB004CF85E /* MenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249A3E01E35D9EB004CF85E /* MenuModel.m */; };
@@ -139,6 +140,7 @@
 		122661CE1E1BC0080009F045 /* WSDConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDConstant.h; sourceTree = "<group>"; };
 		122661CF1E1BC0160009F045 /* WSDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDPrefixHeader.pch; sourceTree = "<group>"; };
 		122661D01E1BC0260009F045 /* WSDTypeDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSDTypeDef.h; sourceTree = "<group>"; };
+		1248524E1E4846D0002EC668 /* MeList_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList_2.plist; sourceTree = "<group>"; };
 		1249A3D71E35CEC0004CF85E /* WSDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLoginViewController.h; sourceTree = "<group>"; };
 		1249A3D81E35CEC0004CF85E /* WSDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLoginViewController.m; sourceTree = "<group>"; };
 		1249A3DB1E35D9E3004CF85E /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 				12C84F891E261001009A9882 /* WSDMeViewController.m */,
 				12F19FAE1E482873007FABEB /* MeList_0.plist */,
 				12F19FAF1E482873007FABEB /* MeList_1.plist */,
+				1248524E1E4846D0002EC668 /* MeList_2.plist */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				12F19FB11E482873007FABEB /* MeList_1.plist in Resources */,
 				12C84F991E261001009A9882 /* account.plist in Resources */,
 				122661671E1BAD4B0009F045 /* Assets.xcassets in Resources */,
+				1248524F1E4846D0002EC668 /* MeList_2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
